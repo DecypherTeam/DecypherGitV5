@@ -2,6 +2,7 @@
 using TouchControlsKit;
 namespace Examples
 {
+    //test for the 100th time
     public class Player : MonoBehaviour
     {
         bool binded;
