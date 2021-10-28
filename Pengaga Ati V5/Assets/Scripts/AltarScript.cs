@@ -6,6 +6,8 @@ namespace Examples
 {
     public class AltarScript : MonoBehaviour
     {
+        // testing
+
         Player player;
 
         private void Start()
