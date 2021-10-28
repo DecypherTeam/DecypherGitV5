@@ -18,12 +18,6 @@ namespace Examples
 
         void Start()
         {
-            
-
-        }
-
-        private void Update()
-        {
             // Get components inside the script so we won't have to manually place them in inside the inspector [START]
             player = GameObject.Find("Player");
 
@@ -38,11 +32,15 @@ namespace Examples
             sc.radius = 2.5f;
             isPickUp = false;
 
+        }
 
+        private void Update()
+        {
             if (TCKInput.GetAction("pickBtn", EActionEvent.Press))
             {
                 if (isPickUp)
                 {
+                    Player.carryObject = true;
                     anim.SetBool("isPickup", true);
                     transform.position = pickUpDest.position;
                     pickupitem.useGravity = false;
@@ -54,6 +52,7 @@ namespace Examples
 
             if (TCKInput.GetAction("pickBtn", EActionEvent.Up))
             {
+                Player.carryObject = false;
                 pickupitem.constraints = RigidbodyConstraints.None;
                 anim.SetBool("isPickup", false);
                 pickupitem.useGravity = true;
@@ -74,7 +73,7 @@ namespace Examples
 
         private void togglePickUp(Collider other)
         {
-            if (other.gameObject.tag == "Player")
+            if (other.gameObject.tag == "Player" && Player.carryObject == false && Player.carryChicken == false)
             {
                 isPickUp = true;
             }

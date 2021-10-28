@@ -286,6 +286,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   pickUpDest: {fileID: 0}
+  pickupitem: {fileID: 0}
+  isPickUp: 0
 --- !u!135 &-8211348548676036967
 SphereCollider:
   m_ObjectHideFlags: 0

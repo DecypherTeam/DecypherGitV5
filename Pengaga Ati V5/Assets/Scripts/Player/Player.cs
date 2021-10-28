@@ -38,6 +38,9 @@ namespace Examples
 
         Animator animator;
 
+        public static bool carryObject = false;
+        public static bool carryChicken = false;
+
         // Awake
         void Awake()
         {
@@ -241,15 +244,21 @@ namespace Examples
         private void PickChicUp()
         {
             /*Debug.Log("Pick Chicken");*/
-            pickChic.useGravity = false;
-            pickChic.transform.position = pickUpDest.position;
-            pickChic.transform.parent = GameObject.Find("PickUpDestination").transform;
+            if(carryObject == false)
+            {
+                carryChicken = true;
+                pickChic.useGravity = false;
+                pickChic.transform.position = pickUpDest.position;
+                pickChic.transform.parent = GameObject.Find("PickUpDestination").transform;
+            }
+            
             /*pickChic.constraints = RigidbodyConstraints.FreezeAll;*/
         }
         private void PickChicDown()
         {
             if (pickChic != null)
             {
+                carryChicken = false;
                 pickChic.transform.parent = null;
                 pickChic.useGravity = true;
                 animator.SetBool("isPickup", false);
@@ -259,14 +268,20 @@ namespace Examples
         // Function for chicken number 2 [START]
         private void PickChicUpSec()
         {
-            pickChicSec.useGravity = false;
-            pickChicSec.transform.position = pickUpDest.position;
-            pickChicSec.transform.parent = GameObject.Find("PickUpDestination").transform;
+            if(carryObject == false)
+            {
+                carryChicken = true;
+                pickChicSec.useGravity = false;
+                pickChicSec.transform.position = pickUpDest.position;
+                pickChicSec.transform.parent = GameObject.Find("PickUpDestination").transform;
+            }
+            
         }
         private void PickChicDownSec()
         {
             if (pickChicSec != null)
             {
+                carryChicken = false;
                 pickChicSec.transform.parent = null;
                 pickChicSec.useGravity = true;
                 animator.SetBool("isPickup", false);
@@ -276,14 +291,20 @@ namespace Examples
         // Function for chicken number 3 [START]
         private void PickChicUpThird()
         {
-            pickChicThird.useGravity = false;
-            pickChicThird.transform.position = pickUpDest.position;
-            pickChicThird.transform.parent = GameObject.Find("PickUpDestination").transform;
+            if (carryObject == false)
+            {
+                carryChicken = true;
+                pickChicThird.useGravity = false;
+                pickChicThird.transform.position = pickUpDest.position;
+                pickChicThird.transform.parent = GameObject.Find("PickUpDestination").transform;
+            }
+                
         }
         private void PickChicDownThird()
         {
             if(pickChicThird != null)
             {
+                carryChicken = false;
                 pickChicThird.transform.parent = null;
                 pickChicThird.useGravity = true;
                 animator.SetBool("isPickup", false);
@@ -293,14 +314,20 @@ namespace Examples
         // Function for chicken number 4 [START]
         private void PickChicUpFourth()
         {
-            pickChicFourth.useGravity = false;
-            pickChicFourth.transform.position = pickUpDest.position;
-            pickChicFourth.transform.parent = GameObject.Find("PickUpDestination").transform;
+            if (carryObject == false)
+            {
+                carryChicken = true;
+                pickChicFourth.useGravity = false;
+                pickChicFourth.transform.position = pickUpDest.position;
+                pickChicFourth.transform.parent = GameObject.Find("PickUpDestination").transform;
+            }
+                
         }
         private void PickChicDownFourth()
         {
             if (pickChicFourth != null)
             {
+                carryChicken = false;
                 pickChicFourth.transform.parent = null;
                 pickChicFourth.useGravity = true;
                 animator.SetBool("isPickup", false);

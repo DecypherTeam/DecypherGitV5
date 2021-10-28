@@ -17,6 +17,7 @@ TagManager:
   - Chillie SeedBag
   - Enemy
   - Plant Spawn
+  - Ghost
   layers:
   - Default
   - TransparentFX

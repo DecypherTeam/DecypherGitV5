@@ -55,7 +55,7 @@ namespace Examples
 
         public void OnCollisionEnter(Collision other)
         {
-            if (other.collider.tag == "Enemy")
+            if (other.collider.tag == "Enemy" || other.collider.tag == "Ghost")
             {
                 Destroy(crop);
             }

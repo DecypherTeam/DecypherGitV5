@@ -72,6 +72,7 @@ namespace Examples
         {
             if (collision.gameObject.name == "Sphere")
             {
+                this.gameObject.tag = "Ghost";
                 animator.SetBool("isDead", true);
                 agent.speed = 0f;
                 StartCoroutine(WaitBeforeDie());
