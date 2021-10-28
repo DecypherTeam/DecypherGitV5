@@ -14,8 +14,15 @@ namespace Examples
         private SphereCollider sc = new SphereCollider();
         private Animator anim = new Animator();
         public bool isPickUp;
+        //public Player player;
 
         void Start()
+        {
+            
+
+        }
+
+        private void Update()
         {
             // Get components inside the script so we won't have to manually place them in inside the inspector [START]
             player = GameObject.Find("Player");
@@ -30,10 +37,8 @@ namespace Examples
             anim = player.GetComponent<Animator>();
             sc.radius = 2.5f;
             isPickUp = false;
-        }
 
-        private void Update()
-        {
+
             if (TCKInput.GetAction("pickBtn", EActionEvent.Press))
             {
                 if (isPickUp)
