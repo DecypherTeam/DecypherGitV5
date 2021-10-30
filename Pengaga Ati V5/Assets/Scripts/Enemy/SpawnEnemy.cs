@@ -12,11 +12,6 @@ namespace Examples
 
         public bool enemySpawn;
 
-        void Start()
-        {
-            
-        }
-
         void Update()
         {
              SpawnEnemies();
