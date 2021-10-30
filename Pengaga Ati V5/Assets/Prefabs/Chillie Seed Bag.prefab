@@ -90,9 +90,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9145892102851744622}
-  - component: {fileID: 9145892102851744620}
   m_Layer: 0
-  m_Name: Chillie Collider
+  m_Name: Chillie Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,19 +113,6 @@ Transform:
   m_Father: {fileID: 9145892104289000100}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &9145892102851744620
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9145892102851744609}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.526411, y: 1.6836505, z: 1.6556263}
-  m_Center: {x: 0.03601837, y: 0.8191714, z: 0.028136253}
 --- !u!1 &9145892103316604219
 GameObject:
   m_ObjectHideFlags: 0

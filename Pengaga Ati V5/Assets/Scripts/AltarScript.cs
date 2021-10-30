@@ -21,7 +21,7 @@ namespace Examples
             {
                 Destroy(other.gameObject);
                 Debug.Log("Chicken is sacrificed");
-                if (other.gameObject == GameObject.Find("Chicken"))
+                if (other.gameObject == player.pickChic)
                 {
                     player.pickChic = null;
                 }

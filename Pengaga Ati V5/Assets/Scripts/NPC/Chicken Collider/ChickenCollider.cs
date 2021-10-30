@@ -10,7 +10,7 @@ namespace Examples
 
         void Start()
         {
-            GameObject thePlayer = GameObject.Find("Player");
+            GameObject thePlayer = GameObject.FindGameObjectWithTag("Player");
             player = thePlayer.GetComponent<Player>();
         }
 

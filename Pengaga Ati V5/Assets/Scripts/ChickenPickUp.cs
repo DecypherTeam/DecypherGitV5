@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using TouchControlsKit;
 using UnityEngine;
+using TouchControlsKit;
+using UnityEngine.AI;
 
 namespace Examples
 {
-    public class ObjectPickUp : MonoBehaviour
+    public class ChickenPickUp : MonoBehaviour
     {
+        NavMeshAgent agent;
+
         public GameObject player;
         public Transform pickUpDest;
         public Rigidbody pickupitem;
@@ -15,8 +18,11 @@ namespace Examples
         private Animator anim = new Animator();
         public bool isPickUp;
 
+        // Start is called before the first frame update
         void Start()
         {
+            agent = GetComponent<NavMeshAgent>();
+
             // Get components inside the script so we won't have to manually place them in inside the inspector [START]
             player = GameObject.Find("Player");
 
@@ -30,15 +36,16 @@ namespace Examples
             anim = player.GetComponent<Animator>();
             sc.radius = 2.5f;
             isPickUp = false;
-
         }
 
-        private void Update()
+        // Update is called once per frame
+        void Update()
         {
             if (TCKInput.GetAction("pickBtn", EActionEvent.Press))
             {
                 if (isPickUp)
                 {
+                    gameObject.GetComponent<NavMeshAgent>().enabled = false;
                     Player.carryObject = true;
                     anim.SetBool("isPickup", true);
                     transform.position = pickUpDest.position;
@@ -51,6 +58,7 @@ namespace Examples
 
             if (TCKInput.GetAction("pickBtn", EActionEvent.Up))
             {
+                gameObject.GetComponent<NavMeshAgent>().enabled = true;
                 Player.carryObject = false;
                 pickupitem.constraints = RigidbodyConstraints.None;
                 anim.SetBool("isPickup", false);

@@ -23,19 +23,25 @@ namespace Examples
         public Transform pickUpDest;
 
         // List of variable for all chickens [START]
+        //Chicken #1
+        private GameObject chicken;
         public Rigidbody pickChic;
         public bool pickedChic;
+        //Chicken #2
+        private GameObject chickenSec;
         public Rigidbody pickChicSec;
         public bool pickedChicSec;
+        //Chicken #3
+        private GameObject chickenThird;
         public Rigidbody pickChicThird;
         public bool pickedChicThird;
+        //Chicken #4
+        private GameObject chickenFourth;
         public Rigidbody pickChicFourth;
         public bool pickedChicFourth;
         // [END]
 
         public bool playerShoot = false;
-
-        public GameObject joystick;
 
         Animator animator;
 
@@ -241,6 +247,27 @@ namespace Examples
 
 
         // Lists of functions handling all chicken functions
+        void Chicken()
+        {
+            chicken = GameObject.Find("Chicken");
+            pickChic = chicken.GetComponent<Rigidbody>();
+        }
+        void ChickenSec()
+        {
+            chickenSec = GameObject.Find("Chicken 2");
+            pickChicSec = chickenSec.GetComponent<Rigidbody>();
+        }
+        void ChickenThird()
+        {
+            chickenThird = GameObject.Find("Chicken 3");
+            pickChicThird = chickenThird.GetComponent<Rigidbody>();
+        }
+        void ChickenFourth()
+        {
+            chickenFourth = GameObject.Find("Chicken 4");
+            pickChicFourth = chickenFourth.GetComponent<Rigidbody>();
+        }
+
         // Function for chicken number 1 [START]
         private void PickChicUp()
         {

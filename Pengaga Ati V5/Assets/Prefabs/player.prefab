@@ -411,13 +411,17 @@ MonoBehaviour:
   secondCamera: {fileID: 2716697579977333480}
   sumpit: {fileID: 2986678061802212930}
   pickUpDest: {fileID: 2716697581353650613}
-  pickChic: {fileID: 0}
+  pickChic: {fileID: 3021063187113694559, guid: c0e14027630c59041b5c5e7483a0a6bd,
+    type: 3}
   pickedChic: 1
-  pickChicSec: {fileID: 0}
+  pickChicSec: {fileID: 4880901463446496615, guid: deb3dbda29937174e8edae56aecd3485,
+    type: 3}
   pickedChicSec: 1
-  pickChicThird: {fileID: 0}
+  pickChicThird: {fileID: 7317221042981486659, guid: be07aa9a86e13bc46a11879ad34ca0c1,
+    type: 3}
   pickedChicThird: 1
-  pickChicFourth: {fileID: 0}
+  pickChicFourth: {fileID: 7276410990434716231, guid: f9c4cf62bce45a345bb03125352cce13,
+    type: 3}
   pickedChicFourth: 1
   playerShoot: 0
   joystick: {fileID: 0}
