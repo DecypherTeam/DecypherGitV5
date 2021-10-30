@@ -12,6 +12,8 @@ namespace Examples
 
         public GameObject[] enemyCheck;
 
+        public bool seedPlanted = false;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -29,13 +31,14 @@ namespace Examples
         {
             if (other.gameObject.tag == "Chillie SeedBag")
             {
+                seedPlanted = true;
                 Player.carryObject = false;
                 Destroy(other.gameObject);
-                spawnplant();
+                //spawnplant();
             }
         }
 
-        void spawnplant()
+        public void spawnplant()
         {
             Instantiate(chillie, transform.position, transform.rotation);
             enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");

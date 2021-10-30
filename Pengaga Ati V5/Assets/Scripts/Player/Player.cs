@@ -19,8 +19,6 @@ namespace Examples
 
         public GameObject sumpit;
 
-        public Transform pickUpDest;
-
         public bool playerShoot = false;
 
         Animator animator;
