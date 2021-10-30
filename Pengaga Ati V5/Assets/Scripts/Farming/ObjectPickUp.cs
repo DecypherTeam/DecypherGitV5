@@ -72,7 +72,7 @@ namespace Examples
 
         private void togglePickUp(Collider other)
         {
-            if (other.gameObject.tag == "Player" && Player.carryObject == false && Player.carryChicken == false)
+            if (other.gameObject.tag == "Player" && Player.carryObject == false)
             {
                 isPickUp = true;
             }

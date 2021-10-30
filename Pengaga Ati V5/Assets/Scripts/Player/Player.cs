@@ -26,7 +26,6 @@ namespace Examples
         Animator animator;
 
         public static bool carryObject = false;
-        public static bool carryChicken = false;
 
         // Awake
         void Awake()
