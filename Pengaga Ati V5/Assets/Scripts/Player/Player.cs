@@ -2,7 +2,6 @@
 using TouchControlsKit;
 namespace Examples
 {
-    //test for the 100th time
     public class Player : MonoBehaviour
     {
         bool binded;
@@ -21,25 +20,6 @@ namespace Examples
         public GameObject sumpit;
 
         public Transform pickUpDest;
-
-        // List of variable for all chickens [START]
-        //Chicken #1
-        private GameObject chicken;
-        public Rigidbody pickChic;
-        public bool pickedChic;
-        //Chicken #2
-        private GameObject chickenSec;
-        public Rigidbody pickChicSec;
-        public bool pickedChicSec;
-        //Chicken #3
-        private GameObject chickenThird;
-        public Rigidbody pickChicThird;
-        public bool pickedChicThird;
-        //Chicken #4
-        private GameObject chickenFourth;
-        public Rigidbody pickChicFourth;
-        public bool pickedChicFourth;
-        // [END]
 
         public bool playerShoot = false;
 
@@ -78,54 +58,13 @@ namespace Examples
             // Assigning the pick up mechanics to the pick up button
             if( TCKInput.GetAction( "pickBtn", EActionEvent.Press))
             {
-                // List of calling pick chicken up functions [START]
-                if (pickedChic == false && pickChic != null)
-                {
-                    PickChicUp();
-                    animator.SetBool("isPickup", true);
-                    pickedChicSec = true;
-                    pickedChicThird = true;
-                    pickedChicFourth = true;
-                }
-                if (pickedChicSec == false && pickChicSec != null)
-                {
-                    PickChicUpSec();
-                    animator.SetBool("isPickup", true);
-                    pickedChic = true;
-                    pickedChicThird = true;
-                    pickedChicFourth = true;
-                }
-                if(pickedChicThird == false && pickChicThird != null)
-                {
-                    PickChicUpThird();
-                    animator.SetBool("isPickup", true);
-                    pickedChic = true;
-                    pickedChicSec = true;
-                    pickedChicFourth = true;
-
-                }
-                if(pickedChicFourth == false && pickChicFourth != null)
-                {
-                    PickChicUpFourth();
-                    animator.SetBool("isPickup", true);
-                    pickedChic = true;
-                    pickedChicSec = true;
-                    pickedChicThird = true;
-                }
-                //[END]
+  
             }
 
             // Assigning the item to drop when the button is not pressed
             if (TCKInput.GetAction("pickBtn", EActionEvent.Up))
             {
-                // List of calling pick chicken down functions
-                if(pickChic != null)
-                {
-                    PickChicDown();
-                    PickChicDownSec();
-                    PickChicDownThird();
-                    PickChicDownFourth();
-                }
+                
             }
 
             // Assigning the shooting mechanics to the shooting button
@@ -152,12 +91,6 @@ namespace Examples
         // FixedUpdate
         void FixedUpdate()
         {
-            // List of booleans for picking chickens
-            pickedChic = true;
-            pickedChicSec = true;
-            pickedChicThird = true;
-            pickedChicFourth = true;
-            
             // Assign the movement of the character to a joystick
             Vector2 move = TCKInput.GetAxis( "Joystick" ); 
             PlayerMovement(move.x, move.y);
@@ -243,127 +176,6 @@ namespace Examples
             rBody.AddForce( camTransform.forward * range, ForceMode.Impulse );
             Destroy( primitive, 0.5f );
         }
-
-
-
-        // Lists of functions handling all chicken functions
-        void Chicken()
-        {
-            chicken = GameObject.Find("Chicken");
-            pickChic = chicken.GetComponent<Rigidbody>();
-        }
-        void ChickenSec()
-        {
-            chickenSec = GameObject.Find("Chicken 2");
-            pickChicSec = chickenSec.GetComponent<Rigidbody>();
-        }
-        void ChickenThird()
-        {
-            chickenThird = GameObject.Find("Chicken 3");
-            pickChicThird = chickenThird.GetComponent<Rigidbody>();
-        }
-        void ChickenFourth()
-        {
-            chickenFourth = GameObject.Find("Chicken 4");
-            pickChicFourth = chickenFourth.GetComponent<Rigidbody>();
-        }
-
-        // Function for chicken number 1 [START]
-        private void PickChicUp()
-        {
-            /*Debug.Log("Pick Chicken");*/
-            if(carryObject == false)
-            {
-                carryChicken = true;
-                pickChic.useGravity = false;
-                pickChic.transform.position = pickUpDest.position;
-                pickChic.transform.parent = GameObject.Find("PickUpDestination").transform;
-            }
-            
-            /*pickChic.constraints = RigidbodyConstraints.FreezeAll;*/
-        }
-        private void PickChicDown()
-        {
-            if (pickChic != null)
-            {
-                carryChicken = false;
-                pickChic.transform.parent = null;
-                pickChic.useGravity = true;
-                animator.SetBool("isPickup", false);
-            }
-        }
-        // Function for chicken number 1 [END]
-        // Function for chicken number 2 [START]
-        private void PickChicUpSec()
-        {
-            if(carryObject == false)
-            {
-                carryChicken = true;
-                pickChicSec.useGravity = false;
-                pickChicSec.transform.position = pickUpDest.position;
-                pickChicSec.transform.parent = GameObject.Find("PickUpDestination").transform;
-            }
-            
-        }
-        private void PickChicDownSec()
-        {
-            if (pickChicSec != null)
-            {
-                carryChicken = false;
-                pickChicSec.transform.parent = null;
-                pickChicSec.useGravity = true;
-                animator.SetBool("isPickup", false);
-            }
-        }
-        // Function for chicken number 2 [END]
-        // Function for chicken number 3 [START]
-        private void PickChicUpThird()
-        {
-            if (carryObject == false)
-            {
-                carryChicken = true;
-                pickChicThird.useGravity = false;
-                pickChicThird.transform.position = pickUpDest.position;
-                pickChicThird.transform.parent = GameObject.Find("PickUpDestination").transform;
-            }
-                
-        }
-        private void PickChicDownThird()
-        {
-            if(pickChicThird != null)
-            {
-                carryChicken = false;
-                pickChicThird.transform.parent = null;
-                pickChicThird.useGravity = true;
-                animator.SetBool("isPickup", false);
-            }
-        }
-        // Function for chicken number 3 [END]
-        // Function for chicken number 4 [START]
-        private void PickChicUpFourth()
-        {
-            if (carryObject == false)
-            {
-                carryChicken = true;
-                pickChicFourth.useGravity = false;
-                pickChicFourth.transform.position = pickUpDest.position;
-                pickChicFourth.transform.parent = GameObject.Find("PickUpDestination").transform;
-            }
-                
-        }
-        private void PickChicDownFourth()
-        {
-            if (pickChicFourth != null)
-            {
-                carryChicken = false;
-                pickChicFourth.transform.parent = null;
-                pickChicFourth.useGravity = true;
-                animator.SetBool("isPickup", false);
-            }
-        }
-        // Function for chicken number 4 [END]
-
-
 
         // PlayerClicked
         public void PlayerClicked()
