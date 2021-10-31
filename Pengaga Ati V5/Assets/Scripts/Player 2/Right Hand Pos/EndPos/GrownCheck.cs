@@ -6,9 +6,9 @@ namespace Examples
 {
     public class GrownCheck : MonoBehaviour
     {
-        public static bool plantIsGrown = false;
+        public static bool plantIsGrown;
 
-        private void OnTriggerStay(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
             if(other.gameObject.tag == "Plant")
             {
