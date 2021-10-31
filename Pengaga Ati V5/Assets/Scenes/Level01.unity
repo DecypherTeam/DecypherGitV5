@@ -16339,9 +16339,10 @@ GameObject:
   - component: {fileID: 543450653413629921}
   - component: {fileID: 3469287837262893124}
   - component: {fileID: 1711813855349548174}
+  - component: {fileID: 919132149475181917}
   - component: {fileID: 1852738068}
   - component: {fileID: 919132149475181916}
-  - component: {fileID: 919132149475181917}
+  - component: {fileID: 919132149475181918}
   m_Layer: 0
   m_Name: Right Hand
   m_TagString: RightHand
@@ -16376,6 +16377,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7843526606762953986, guid: 3dba91ec3f7778a40ad8ff45d0c0f7cd, type: 3}
+--- !u!114 &919132149475181918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149475181915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3aba4c5440a1f45876e4df92c54343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spiritCheck: []
 --- !u!1 &919132149476401282
 GameObject:
   m_ObjectHideFlags: 0

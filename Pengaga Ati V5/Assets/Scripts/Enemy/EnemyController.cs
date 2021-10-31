@@ -20,6 +20,8 @@ namespace Examples
 
         SpawnEnemy spawnEnemy;
 
+        public static bool destroy = false;
+
         private void Start()
         {
             agent = GetComponent<NavMeshAgent>();
@@ -44,6 +46,12 @@ namespace Examples
             {
                 StopEnemy();
             }
+
+            if(destroy == true)
+            {
+                DestroyEnemy();
+                destroy = false;
+            }
         }
 
         private void GoToTarget()
@@ -66,13 +74,13 @@ namespace Examples
             rb.useGravity = false;
             agent.baseOffset = 2f;
             agent.speed = 2f;
+            this.gameObject.tag = "Ghost";
         }
 
         void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.name == "Sphere")
             {
-                this.gameObject.tag = "Ghost";
                 animator.SetBool("isDead", true);
                 agent.speed = 0f;
                 StartCoroutine(WaitBeforeDie());
@@ -83,6 +91,11 @@ namespace Examples
         {
             yield return new WaitForSeconds(2);
             StartCoroutine(WaitBeforeGhost());
+        }
+
+        void DestroyEnemy()
+        {
+            Destroy(gameObject);
         }
     }
 }
