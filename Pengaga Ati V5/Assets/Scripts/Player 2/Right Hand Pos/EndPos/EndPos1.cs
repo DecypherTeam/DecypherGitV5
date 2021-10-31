@@ -5,62 +5,47 @@ using TouchControlsKit;
 
 namespace Examples
 {
-    public class EndPos : MonoBehaviour
+    public class EndPos1 : MonoBehaviour
     {
         public Transform rightHand;
         public Transform startPos;
 
-        private bool changePosition = false;
+        public static bool handInPosition1 = false;
 
-        public static bool handInPosition = false;
         private bool positionHere = false;
-
-        void Start()
-        {
-            
-        }
 
         void Update()
         {
-            if (plantScript.seedPlanted == true)
-            {
-                changePosition = true;
-            }
-
             if (TCKInput.GetAction("plantSeedBtn", EActionEvent.Press))
             {
-                if(changePosition == true && positionHere == true)
+                if (positionHere == true && GrownCheck1.plantIsGrown1 == false)
                 {
                     rightHand.position = transform.position;
-                    handInPosition = true;
-                    print("hand is in position");
-                }    
+                    handInPosition1 = true;
+                }
             }
-            
+
             if (TCKInput.GetAction("plantSeedBtn", EActionEvent.Up))
             {
                 rightHand.position = startPos.position;
-                handInPosition = false;
+                handInPosition1 = false;
             }
         }
 
         private void OnTriggerStay(Collider other)
         {
-            if(other.gameObject.tag == "Plant")
+            if (other.gameObject.tag == "Plant")
             {
-                print("touched plant");
                 positionHere = true;
             }
         }
-
-
-        /*void ChangePosition()
+        private void OnTriggerExit(Collider other)
         {
-            if(plantScript.seedPlanted == true)
+            if (other.gameObject.tag == "Plant")
             {
-                changePosition = true;
+                positionHere = false;
             }
-        }*/
+        }
     }
 }
 
