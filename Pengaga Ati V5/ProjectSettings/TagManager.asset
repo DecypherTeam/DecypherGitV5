@@ -18,6 +18,7 @@ TagManager:
   - Enemy
   - Plant Spawn
   - Ghost
+  - RightHand
   layers:
   - Default
   - TransparentFX
