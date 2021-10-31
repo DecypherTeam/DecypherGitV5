@@ -8,9 +8,7 @@ namespace Examples
     {
         plantScript planting;
 
-        public Transform farm1;
-
-        private bool handInPosition = false;
+        public Transform startPos;
 
         // Start is called before the first frame update
         void Start()
@@ -22,19 +20,11 @@ namespace Examples
         // Update is called once per frame
         void Update()
         {
-            handInPosition = false;
-
-            if(planting.seedPlanted == true)
+            /*if(planting.seedPlanted == true)
             {
-                transform.position = farm1.position;
-                handInPosition = true;
-            }
+                //transform.position = 
+            }*/
 
-            if(handInPosition == true)
-            {
-                planting.spawnplant();
-                handInPosition = false;
-            }
         }
     }
 }

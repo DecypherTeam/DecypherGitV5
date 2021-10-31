@@ -21,16 +21,16 @@ namespace Examples
             GameObject theDestination = GameObject.Find("PickUpDestination");
             theDest = theDestination.GetComponent<Transform>();
 
-            if (isMaxSize == false)
-            {
-                StartCoroutine(Grow());
-            }
-
             crop.GetComponent<ObjectPickUp>().enabled = false;
         }
 
         void Update()
         {
+            if (isMaxSize == false && EndPos.handInPosition == true)
+            {
+                StartCoroutine(Grow());
+            }
+
             if (isMaxSize == true)
             {
                 crop.GetComponent<ObjectPickUp>().enabled = true;

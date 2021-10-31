@@ -12,13 +12,20 @@ namespace Examples
 
         public GameObject[] enemyCheck;
 
-        public bool seedPlanted = false;
+        public static bool seedPlanted = false;
+
+        public bool handIsPlanting = false;
+
+        EndPos endPos;
 
         // Start is called before the first frame update
         void Start()
         {
             GameObject spawnenemy = GameObject.Find("SpawnEnemy");
             spawnEnemy = spawnenemy.GetComponent<SpawnEnemy>();
+
+            GameObject hand = GameObject.Find("EndPos");
+            endPos = hand.GetComponent<EndPos>();
         }
 
         // Update is called once per frame
@@ -34,20 +41,19 @@ namespace Examples
                 seedPlanted = true;
                 Player.carryObject = false;
                 Destroy(other.gameObject);
-                //spawnplant();
+                spawnplant();
             }
         }
 
         public void spawnplant()
         {
             Instantiate(chillie, transform.position, transform.rotation);
+
             enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
-            
-            if(enemyCheck.Length == 0)
+            if (enemyCheck.Length == 0)
             {
                 spawnEnemy.enemySpawn = true;
             }
-            
         }
     }
 }
