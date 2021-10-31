@@ -26,7 +26,7 @@ namespace Examples
 
         void Update()
         {
-            if (isMaxSize == false && EndPos.handInPosition == true || EndPos1.handInPosition1 == true)
+            if (isMaxSize == false && EndPos.handInPosition == true)
             {
                 StartCoroutine(Grow());
             }
