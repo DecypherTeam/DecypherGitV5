@@ -10,6 +10,8 @@ namespace Examples
         public GameObject textDisplay;
         public int secondsLeft = 11;
         public bool takingAway = false;
+
+        public GameObject loseScreen;
       
         void Start()
         {
@@ -21,6 +23,11 @@ namespace Examples
             if(takingAway == false && secondsLeft > 0)
             {
                 StartCoroutine(TimerTake());
+            }
+
+            if(secondsLeft == 0 && ScoringSystem.theScore < 10)
+            {
+                loseScreen.SetActive(true);
             }
         }
 

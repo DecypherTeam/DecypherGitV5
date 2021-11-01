@@ -10,6 +10,6 @@ public class ScoringSystem : MonoBehaviour
 
     void Update()
     {
-        scoreText.GetComponent<Text>().text = "Chillies: " + theScore + " / 30";
+        scoreText.GetComponent<Text>().text = "Chillies: " + theScore + " / 10";
     }
 }
