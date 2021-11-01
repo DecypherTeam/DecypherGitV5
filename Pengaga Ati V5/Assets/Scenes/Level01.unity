@@ -4620,7 +4620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &729839790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4634,7 +4634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 1214651854}
-  secondsLeft: 10
+  secondsLeft: 65
   takingAway: 0
   loseScreen: {fileID: 1483167291}
 --- !u!4 &729839791
@@ -8869,6 +8869,7 @@ GameObject:
   - component: {fileID: 1214651855}
   - component: {fileID: 1214651857}
   - component: {fileID: 1214651856}
+  - component: {fileID: 1214651858}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -8908,7 +8909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.41960785, g: 0.9137255, b: 0.29803923, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8928,7 +8929,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: '00:00
+
+'
 --- !u!222 &1214651857
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8937,6 +8940,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214651854}
   m_CullTransparentMesh: 1
+--- !u!114 &1214651858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214651854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a62948e8d9e551a4bbfc545f5ae05c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeValue: 300
+  timeText: {fileID: 1214651856}
+  loseScreen: {fileID: 1483167291}
 --- !u!1 &1223728604
 GameObject:
   m_ObjectHideFlags: 0
@@ -12004,7 +12022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.41960785, g: 0.9137255, b: 0.29803923, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

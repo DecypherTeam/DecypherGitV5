@@ -44,6 +44,11 @@ namespace Examples
             {
                 textDisplay.GetComponent<Text>().text = "00:" + secondsLeft;
             }
+            if (secondsLeft >= 60)
+            {
+                textDisplay.GetComponent<Text>().text = "01:" + secondsLeft;
+            }
+
             takingAway = false;
         }
     }
