@@ -18,7 +18,7 @@ namespace Examples
         {
             if (TCKInput.GetAction("plantSeedBtn", EActionEvent.Press))
             {
-                if(positionHere == true && GrownCheck.plantIsGrown == false)
+                if(positionHere == true /*&& GrownCheck.plantIsGrown == false*/)
                 {
                     rightHand.position = transform.position;
                     handInPosition = true;
