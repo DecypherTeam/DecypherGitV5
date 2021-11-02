@@ -20,7 +20,7 @@ namespace Examples
 
             if (TCKInput.GetAction("killSpiritBtn", EActionEvent.Press))
             {
-                if (spiritCheck.Length == 1)
+                if (spiritCheck.Length != 0)
                 {
                     //transform.position = GameObject[] spiritCheck.transform.position;
                     EnemyController.destroy = true;

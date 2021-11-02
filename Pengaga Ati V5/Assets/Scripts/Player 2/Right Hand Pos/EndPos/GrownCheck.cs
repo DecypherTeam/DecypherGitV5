@@ -22,7 +22,6 @@ namespace Examples
         {
             if(other.gameObject.tag == "Plant")
             {
-                print("Plant is fully grown");
                 plantIsGrown = true;
 
                 enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
@@ -37,7 +36,6 @@ namespace Examples
         {
             if (other.gameObject.tag == "Plant")
             {
-                print("Plant is not fully grown");
                 plantIsGrown = false;
             }
         }
