@@ -16,22 +16,11 @@ namespace Examples
 
         public bool handIsPlanting = false;
 
-        EndPos endPos;
-
         // Start is called before the first frame update
         void Start()
         {
             GameObject spawnenemy = GameObject.Find("SpawnEnemy");
             spawnEnemy = spawnenemy.GetComponent<SpawnEnemy>();
-
-            GameObject hand = GameObject.Find("EndPos");
-            endPos = hand.GetComponent<EndPos>();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            
         }
 
         private void OnTriggerEnter(Collider other)
