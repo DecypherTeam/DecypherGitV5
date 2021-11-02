@@ -8,14 +8,25 @@ namespace Examples
     {
         public static bool sacrificed = false;
 
+        public AudioSource bonusTime;
+        private bool soundIsPlay = false;
+
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.tag == "NPC")
+            if (other.gameObject.tag == "NPC" && soundIsPlay == false)
             {
                 Destroy(other.gameObject);
                 Debug.Log("Chicken is sacrificed");
                 sacrificed = true;
+                PlaySound();
+                soundIsPlay = false;
             }
+        }
+
+        void PlaySound()
+        {
+            //bonusTime.Play();
+            soundIsPlay = true;
         }
     }
 }
