@@ -9,6 +9,7 @@ namespace Examples
         public static bool sacrificed = false;
 
         public AudioSource bonusTime;
+        public AudioSource chickenSacrificed;
         private bool soundIsPlay = false;
 
         private void OnTriggerEnter(Collider other)
@@ -25,7 +26,8 @@ namespace Examples
 
         void PlaySound()
         {
-            //bonusTime.Play();
+            bonusTime.Play();
+            chickenSacrificed.Play();
             soundIsPlay = true;
         }
     }
