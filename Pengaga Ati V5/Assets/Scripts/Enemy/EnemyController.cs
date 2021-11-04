@@ -51,7 +51,7 @@ namespace Examples
 
             if(destroy == true)
             {
-                DestroyEnemy();
+                StartCoroutine(DestroyEnemy());
                 destroy = false;
             }
 
@@ -99,8 +99,9 @@ namespace Examples
             StartCoroutine(WaitBeforeGhost());
         }
 
-        void DestroyEnemy()
+        public IEnumerator DestroyEnemy()
         {
+            yield return new WaitForSeconds(1);
             Destroy(gameObject);
         }
     }

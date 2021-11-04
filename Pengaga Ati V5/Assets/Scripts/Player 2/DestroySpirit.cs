@@ -9,10 +9,7 @@ namespace Examples
     {
         public GameObject[] spiritCheck;
 
-        void Start()
-        {
-            
-        }
+        public ParticleSystem ps;
 
         void Update()
         {
@@ -24,6 +21,7 @@ namespace Examples
                 {
                     //transform.position = GameObject[] spiritCheck.transform.position;
                     EnemyController.destroy = true;
+                    ps.Play();
                 }
             }
         }
