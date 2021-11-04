@@ -18,6 +18,8 @@ namespace Examples
         private Animator anim = new Animator();
         public bool isPickUp;
 
+        public AudioSource pickUp;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -30,6 +32,8 @@ namespace Examples
             pickUpDest = theDestination.GetComponent<Transform>();
 
             pickupitem = GetComponent<Rigidbody>();
+
+            pickUp = GameObject.Find("HarvestSound").GetComponent<AudioSource>();
             // [END]
 
             sc = gameObject.GetComponent<SphereCollider>();
@@ -53,6 +57,7 @@ namespace Examples
                     pickupitem.transform.parent = pickUpDest.transform;
                     pickupitem.constraints = RigidbodyConstraints.FreezeAll;
                     isPickUp = false;
+                    pickUp.Play();
                 }
             }
 

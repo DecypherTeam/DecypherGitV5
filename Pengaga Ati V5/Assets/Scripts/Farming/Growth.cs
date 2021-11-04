@@ -13,14 +13,9 @@ namespace Examples
         public bool isMaxSize = false;
 
         public GameObject crop;
-        public Rigidbody cropRb;
-        public Transform theDest;
 
         void Start()
         {
-            GameObject theDestination = GameObject.Find("PickUpDestination");
-            theDest = theDestination.GetComponent<Transform>();
-
             crop.GetComponent<ObjectPickUp>().enabled = false;
         }
 

@@ -11,6 +11,8 @@ namespace Examples
 
         public ParticleSystem ps;
 
+        public AudioSource windSound;
+
         void Update()
         {
             spiritCheck = GameObject.FindGameObjectsWithTag("Ghost");
@@ -22,6 +24,7 @@ namespace Examples
                     //transform.position = GameObject[] spiritCheck.transform.position;
                     EnemyController.destroy = true;
                     ps.Play();
+                    windSound.Play();
                 }
             }
         }

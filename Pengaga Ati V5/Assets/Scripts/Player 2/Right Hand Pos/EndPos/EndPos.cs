@@ -16,6 +16,8 @@ namespace Examples
 
         public GameObject particles;
 
+        //public AudioSource rainSound;
+
         void Update()
         {
             if (TCKInput.GetAction("plantSeedBtn", EActionEvent.Press))
@@ -25,6 +27,7 @@ namespace Examples
                     rightHand.position = transform.position;
                     handInPosition = true;
                     particles.SetActive(true);
+                    //rainSound.Play();
                 }    
             }
             
@@ -33,6 +36,7 @@ namespace Examples
                 rightHand.position = startPos.position;
                 handInPosition = false;
                 particles.SetActive(false);
+                //rainSound.Play();
             }
         }
 

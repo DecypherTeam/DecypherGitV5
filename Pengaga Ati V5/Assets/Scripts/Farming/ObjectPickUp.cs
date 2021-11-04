@@ -15,6 +15,8 @@ namespace Examples
         private Animator anim = new Animator();
         public bool isPickUp;
 
+        public AudioSource pickUp;
+
         void Start()
         {
             // Get components inside the script so we won't have to manually place them in inside the inspector [START]
@@ -24,6 +26,8 @@ namespace Examples
             pickUpDest = theDestination.GetComponent<Transform>();
 
             pickupitem = GetComponent<Rigidbody>();
+
+            pickUp = GameObject.Find("HarvestSound").GetComponent<AudioSource>();
             // [END]
 
             sc = gameObject.GetComponent<SphereCollider>();
@@ -45,6 +49,7 @@ namespace Examples
                     pickupitem.transform.parent = pickUpDest.transform;
                     pickupitem.constraints = RigidbodyConstraints.FreezeAll;
                     isPickUp = false;
+                    pickUp.Play();
                 }
             }
 

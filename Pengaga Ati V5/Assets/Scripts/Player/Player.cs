@@ -25,6 +25,8 @@ namespace Examples
 
         public static bool carryObject = false;
 
+        public AudioSource shootSound;
+
         // Awake
         void Awake()
         {
@@ -50,18 +52,6 @@ namespace Examples
                     weapReady = true;
                     weapReadyTime = 0f;
                 }
-            }
-
-            // Assigning the pick up mechanics to the pick up button
-            if( TCKInput.GetAction( "pickBtn", EActionEvent.Press))
-            {
-  
-            }
-
-            // Assigning the item to drop when the button is not pressed
-            if (TCKInput.GetAction("pickBtn", EActionEvent.Up))
-            {
-                
             }
 
             // Assigning the shooting mechanics to the shooting button
@@ -172,6 +162,7 @@ namespace Examples
             Transform camTransform = secondCamera.transform;
             rBody.AddForce( camTransform.forward * range, ForceMode.Impulse );
             Destroy( primitive, 0.5f );
+            shootSound.Play();
         }
 
         // PlayerClicked
