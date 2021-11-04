@@ -12,6 +12,13 @@ namespace Examples
         public AudioSource chickenSacrificed;
         private bool soundIsPlay = false;
 
+        ParticleSystem ps;
+
+        void Update()
+        {
+            ps = GameObject.Find("Particle Sacrifice").GetComponent<ParticleSystem>();
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.tag == "NPC" && soundIsPlay == false)
@@ -20,6 +27,7 @@ namespace Examples
                 Debug.Log("Chicken is sacrificed");
                 sacrificed = true;
                 PlaySound();
+                PlayParticles();
                 soundIsPlay = false;
             }
         }
@@ -29,6 +37,11 @@ namespace Examples
             bonusTime.Play();
             chickenSacrificed.Play();
             soundIsPlay = true;
+        }
+
+        void PlayParticles()
+        {
+            ps.Play();
         }
     }
 }

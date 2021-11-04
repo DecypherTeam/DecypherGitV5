@@ -16,6 +16,8 @@ namespace Examples
 
         public bool handIsPlanting = false;
 
+        public AudioSource planted;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -27,6 +29,7 @@ namespace Examples
         {
             if (other.gameObject.tag == "Chillie SeedBag")
             {
+                planted.Play();
                 seedPlanted = true;
                 Player.carryObject = false;
                 Destroy(other.gameObject);

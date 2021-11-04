@@ -14,6 +14,8 @@ namespace Examples
 
         private bool positionHere = false;
 
+        public GameObject particles;
+
         void Update()
         {
             if (TCKInput.GetAction("plantSeedBtn", EActionEvent.Press))
@@ -22,6 +24,7 @@ namespace Examples
                 {
                     rightHand.position = transform.position;
                     handInPosition = true;
+                    particles.SetActive(true);
                 }    
             }
             
@@ -29,6 +32,7 @@ namespace Examples
             {
                 rightHand.position = startPos.position;
                 handInPosition = false;
+                particles.SetActive(false);
             }
         }
 

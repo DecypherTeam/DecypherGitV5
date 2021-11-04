@@ -22,6 +22,8 @@ namespace Examples
 
         public static bool destroy = false;
 
+        ParticleSystem ps;
+
         private void Start()
         {
             agent = GetComponent<NavMeshAgent>();
@@ -52,6 +54,9 @@ namespace Examples
                 DestroyEnemy();
                 destroy = false;
             }
+
+            ps = GameObject.Find("Particle Spirit").GetComponent<ParticleSystem>();
+            ps.transform.position = transform.position;
         }
 
         private void GoToTarget()
@@ -83,11 +88,12 @@ namespace Examples
             {
                 animator.SetBool("isDead", true);
                 agent.speed = 0f;
-                StartCoroutine(WaitBeforeDie());
+                ps.Play();
+                StartCoroutine(WaitBeforeRevealGhost());
             }
         }
 
-        public IEnumerator WaitBeforeDie()
+        public IEnumerator WaitBeforeRevealGhost()
         {
             yield return new WaitForSeconds(2);
             StartCoroutine(WaitBeforeGhost());
