@@ -28,6 +28,7 @@ namespace Examples
                 if(timeValue == 0 && soundIsPlaying == false)
                 {
                     PlaySound();
+                    Time.timeScale = 0;
                 }
             }
             if (AltarScript.sacrificed == true)

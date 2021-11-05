@@ -24,6 +24,10 @@ namespace Examples
 
         ParticleSystem ps;
 
+        public AudioSource deathSound;
+
+        public AudioSource angelSound;
+
         private void Start()
         {
             agent = GetComponent<NavMeshAgent>();
@@ -57,6 +61,10 @@ namespace Examples
 
             ps = GameObject.Find("Particle Spirit").GetComponent<ParticleSystem>();
             ps.transform.position = transform.position;
+
+            deathSound = GameObject.Find("BoarDeadSound").GetComponent<AudioSource>();
+
+            angelSound = GameObject.Find("Angel Choir").GetComponent<AudioSource>();
         }
 
         private void GoToTarget()
@@ -75,6 +83,7 @@ namespace Examples
         public IEnumerator WaitBeforeGhost()
         {
             yield return new WaitForSeconds(2);
+            angelSound.Play();
             mesh.GetComponent<Renderer>().material = ghostMaterial;
             rb.useGravity = false;
             agent.baseOffset = 2f;
@@ -88,6 +97,7 @@ namespace Examples
             {
                 animator.SetBool("isDead", true);
                 agent.speed = 0f;
+                deathSound.Play();
                 ps.Play();
                 StartCoroutine(WaitBeforeRevealGhost());
             }

@@ -16,18 +16,18 @@ namespace Examples
 
         public GameObject particles;
 
-        //public AudioSource rainSound;
+        public AudioSource rainSound;
 
         void Update()
         {
-            if (TCKInput.GetAction("plantSeedBtn", EActionEvent.Press))
+            if (TCKInput.GetAction("plantSeedBtn", EActionEvent.Down))
             {
                 if(positionHere == true)
                 {
                     rightHand.position = transform.position;
                     handInPosition = true;
                     particles.SetActive(true);
-                    //rainSound.Play();
+                    rainSound.Play();
                 }    
             }
             
@@ -36,7 +36,7 @@ namespace Examples
                 rightHand.position = startPos.position;
                 handInPosition = false;
                 particles.SetActive(false);
-                //rainSound.Play();
+                rainSound.Pause();
             }
         }
 

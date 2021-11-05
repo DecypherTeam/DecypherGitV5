@@ -14,6 +14,8 @@ namespace Examples
 
         public GameObject crop;
 
+        public AudioSource eatSound;
+
         void Start()
         {
             crop.GetComponent<ObjectPickUp>().enabled = false;
@@ -30,6 +32,8 @@ namespace Examples
             {
                 crop.GetComponent<ObjectPickUp>().enabled = true;
             }
+
+            eatSound = GameObject.Find("BoarEatSound").GetComponent<AudioSource>();
         }
 
         private IEnumerator Grow()
@@ -52,6 +56,7 @@ namespace Examples
         {
             if (other.collider.tag == "Enemy" || other.collider.tag == "Ghost")
             {
+                eatSound.Play();
                 Destroy(crop);
             }
         }
