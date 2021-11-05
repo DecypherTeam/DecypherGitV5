@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-// test for the 1000th times
-// test
+
 namespace Examples
 {
     public class AltarScript : MonoBehaviour

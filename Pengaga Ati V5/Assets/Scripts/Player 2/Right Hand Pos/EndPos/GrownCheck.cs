@@ -10,12 +10,12 @@ namespace Examples
 
         SpawnEnemy spawnEnemy;
 
-        public GameObject[] enemyCheck;
+        //public GameObject[] enemyCheck;
 
         private void Start()
         {
-            GameObject spawnenemy = GameObject.Find("SpawnEnemy");
-            spawnEnemy = spawnenemy.GetComponent<SpawnEnemy>();
+            //GameObject spawnenemy = GameObject.Find("SpawnEnemy");
+            //spawnEnemy = spawnenemy.GetComponent<SpawnEnemy>();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -25,11 +25,11 @@ namespace Examples
                 print("Plant is fully grown");
                 plantIsGrown = true;
 
-                enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
+                /*enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
                 if (enemyCheck.Length == 0)
                 {
                     spawnEnemy.enemySpawn = true;
-                }
+                }*/
             }
         }
 
