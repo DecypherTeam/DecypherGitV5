@@ -38,29 +38,45 @@ namespace Examples
 
         private void Update()
         {
-            if (TCKInput.GetAction("pickBtn", EActionEvent.Press))
+            if (TCKInput.GetAction("pickBtn", EActionEvent.Up))
             {
                 if (isPickUp)
                 {
-                    Player.carryObject = true;
+                    Player.carryCrop = true;
                     anim.SetBool("isPickup", true);
                     transform.position = pickUpDest.position;
                     pickupitem.useGravity = false;
                     pickupitem.transform.parent = pickUpDest.transform;
                     pickupitem.constraints = RigidbodyConstraints.FreezeAll;
-                    isPickUp = false;
                     pickUp.Play();
+                    isPickUp = false;
+                }
+                else
+                {
+                    Player.carryCrop = false;
+                    pickupitem.constraints = RigidbodyConstraints.FreezeRotation;
+                    anim.SetBool("isPickup", false);
+                    pickupitem.useGravity = true;
+                    pickupitem.transform.parent = null;
                 }
             }
 
-            if (TCKInput.GetAction("pickBtn", EActionEvent.Up))
+            if(plantScript.seedPlanted == true || ScorePoint.delivered == true)
+            {
+                anim.SetBool("isPickup", false);
+                plantScript.seedPlanted = false;
+                ScorePoint.delivered = false;
+            }
+
+            /*if (TCKInput.GetAction("pickBtn", EActionEvent.Down) && Player.carryCrop == true)
             {
                 Player.carryObject = false;
                 pickupitem.constraints = RigidbodyConstraints.None;
                 anim.SetBool("isPickup", false);
                 pickupitem.useGravity = true;
                 pickupitem.transform.parent = null;
-            }
+                isPickUp = true;
+            }*/
         }
 
         private void OnTriggerStay(Collider other)
@@ -76,7 +92,7 @@ namespace Examples
 
         private void togglePickUp(Collider other)
         {
-            if (other.gameObject.tag == "Player" && Player.carryObject == false)
+            if (other.gameObject.tag == "Player" && Player.carryCrop == false)
             {
                 isPickUp = true;
             }

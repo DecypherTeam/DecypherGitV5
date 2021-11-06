@@ -17,6 +17,7 @@ namespace Examples
         private SphereCollider sc = new SphereCollider();
         private Animator anim = new Animator();
         public bool isPickUp;
+        public bool isCarrying;
 
         public AudioSource pickUp;
 

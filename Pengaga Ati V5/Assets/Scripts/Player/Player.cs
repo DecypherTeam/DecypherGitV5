@@ -23,6 +23,8 @@ namespace Examples
 
         Animator animator;
 
+        public static bool carryCrop = false;
+
         public static bool carryObject = false;
 
         public AudioSource shootSound;

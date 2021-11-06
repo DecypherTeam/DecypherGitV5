@@ -18,6 +18,8 @@ namespace Examples
 
         public AudioSource planted;
 
+        private bool canPlant = true;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -27,11 +29,12 @@ namespace Examples
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.tag == "Chillie SeedBag")
+            if (other.gameObject.tag == "Chillie SeedBag" && canPlant == true)
             {
+                canPlant = false;
                 planted.Play();
                 seedPlanted = true;
-                Player.carryObject = false;
+                Player.carryCrop = false;
                 Destroy(other.gameObject);
                 spawnplant();
             }

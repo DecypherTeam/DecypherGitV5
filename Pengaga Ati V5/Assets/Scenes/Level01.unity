@@ -6045,7 +6045,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247182357}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d3cb72d351fe52e4ea6945d7e2380487, type: 3}
@@ -19882,7 +19882,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cb43d35b232f5d4fad39a14e431a7b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCheck: []
 --- !u!195 &819265227
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -22426,7 +22425,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148052761977}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2fc25225ec2c6054f97745630f4e2c2d, type: 3}
@@ -33175,7 +33174,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745246052}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d7debd287131d324daa3b3945f74e69f, type: 3}
@@ -38055,6 +38054,7 @@ MonoBehaviour:
   pickUpDest: {fileID: 0}
   pickupitem: {fileID: 0}
   isPickUp: 0
+  isCarrying: 0
   pickUp: {fileID: 0}
 --- !u!135 &919132148769782333
 SphereCollider:
@@ -38108,6 +38108,7 @@ MonoBehaviour:
   pickUpDest: {fileID: 0}
   pickupitem: {fileID: 0}
   isPickUp: 0
+  isCarrying: 0
   pickUp: {fileID: 0}
 --- !u!135 &919132148874108531
 SphereCollider:
@@ -38229,6 +38230,7 @@ MonoBehaviour:
   pickUpDest: {fileID: 0}
   pickupitem: {fileID: 0}
   isPickUp: 0
+  isCarrying: 0
   pickUp: {fileID: 0}
 --- !u!135 &919132149189046959
 SphereCollider:
@@ -38364,6 +38366,7 @@ MonoBehaviour:
   pickUpDest: {fileID: 0}
   pickupitem: {fileID: 0}
   isPickUp: 0
+  isCarrying: 0
   pickUp: {fileID: 0}
 --- !u!135 &919132149511761984
 SphereCollider:
