@@ -29,16 +29,10 @@ namespace Examples
             spawnEnemy = spawnenemy.GetComponent<SpawnEnemy>();*/
         }
 
-        void Update()
-        {
-            //CheckPlant();
-        }
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.tag == "Chillie SeedBag" && canPlant == true)
             {
-                //canPlant = false;
                 planted.Play();
                 seedPlanted = true;
                 Player.carryObject = false;
@@ -70,23 +64,12 @@ namespace Examples
         public void spawnplant()
         {
             Instantiate(chillie, transform.position, transform.rotation);
-            //canPlant = false;
 
             /*enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
             if (enemyCheck.Length == 0)
             {
                 spawnEnemy.enemySpawn = true;
             }*/
-        }
-
-        void CheckPlant()
-        {
-            checkPlant = GameObject.FindGameObjectsWithTag("Plant");
-            if(checkPlant.Length == 0)
-            {
-                canPlant = true;
-                print("can plant = true");
-            }
         }
     }
 }
