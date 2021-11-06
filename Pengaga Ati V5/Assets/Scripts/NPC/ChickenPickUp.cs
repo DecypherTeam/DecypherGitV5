@@ -20,7 +20,9 @@ namespace Examples
 
         public AudioSource pickUp;
 
-        // Start is called before the first frame update
+        public TCKButton pickBtn;
+        public TCKButton unpickBtn;
+
         void Start()
         {
             agent = GetComponent<NavMeshAgent>();
@@ -45,6 +47,10 @@ namespace Examples
         // Update is called once per frame
         void Update()
         {
+            pickBtn = GameObject.Find("pickBtn").GetComponent<TCKButton>();
+
+            unpickBtn = GameObject.Find("unpickBtn").GetComponent<TCKButton>();
+
             if (TCKInput.GetAction("pickBtn", EActionEvent.Press))
             {
                 if (isPickUp)
@@ -58,10 +64,11 @@ namespace Examples
                     pickupitem.constraints = RigidbodyConstraints.FreezeAll;
                     isPickUp = false;
                     pickUp.Play();
+                    ActivateUnpickBtn();
                 }
             }
 
-            if (TCKInput.GetAction("pickBtn", EActionEvent.Up))
+            if (TCKInput.GetAction("unpickBtn", EActionEvent.Click))
             {
                 gameObject.GetComponent<NavMeshAgent>().enabled = true;
                 Player.carryObject = false;
@@ -69,7 +76,20 @@ namespace Examples
                 anim.SetBool("isPickup", false);
                 pickupitem.useGravity = true;
                 pickupitem.transform.parent = null;
+                ActivatePickBtn();
             }
+        }
+
+        void ActivateUnpickBtn()
+        {
+            pickBtn.isEnable = false;
+            unpickBtn.isEnable = true;
+        }
+
+        void ActivatePickBtn()
+        {
+            unpickBtn.isEnable = false;
+            pickBtn.isEnable = true;
         }
 
         private void OnTriggerStay(Collider other)
