@@ -17,6 +17,11 @@ namespace Examples
 
         public AudioSource pickUp;
 
+        //public GameObject pickBtnObject;
+        public GameObject unpickBtnObject;
+        public TCKButton pickBtn;
+        public TCKButton unpickBtn;
+
         void Start()
         {
             // Get components inside the script so we won't have to manually place them in inside the inspector [START]
@@ -38,7 +43,13 @@ namespace Examples
 
         private void Update()
         {
-            if (TCKInput.GetAction("pickBtn", EActionEvent.Press))
+            pickBtn = GameObject.Find("pickBtn").GetComponent<TCKButton>();
+            //pickBtn = pickBtnObject.GetComponent<TCKButton>();
+
+            unpickBtn = GameObject.Find("unpickBtn").GetComponent<TCKButton>();
+            //unpickBtn = unpickBtnObject.GetComponent<TCKButton>();
+
+            if (TCKInput.GetAction("pickBtn", EActionEvent.Click))
             {
                 if (isPickUp)
                 {
@@ -50,16 +61,20 @@ namespace Examples
                     pickupitem.constraints = RigidbodyConstraints.FreezeAll;
                     isPickUp = false;
                     pickUp.Play();
+                    pickBtn.isEnable = false;
+                    unpickBtn.isEnable = true;
                 }
             }
 
-            if (TCKInput.GetAction("pickBtn", EActionEvent.Up))
+            if (TCKInput.GetAction("unpickBtn", EActionEvent.Click))
             {
                 Player.carryObject = false;
                 pickupitem.constraints = RigidbodyConstraints.FreezeRotation;
                 anim.SetBool("isPickup", false);
                 pickupitem.useGravity = true;
                 pickupitem.transform.parent = null;
+                unpickBtn.isEnable = false;
+                pickBtn.isEnable = true;
             }
         }
 
