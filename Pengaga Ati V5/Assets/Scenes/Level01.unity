@@ -6019,7 +6019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &247182358
 Transform:
   m_ObjectHideFlags: 0
@@ -38138,7 +38138,7 @@ GameObject:
   - component: {fileID: 660248655}
   - component: {fileID: 919132148769782332}
   m_Layer: 0
-  m_Name: Chicken 2
+  m_Name: Chicken
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38161,6 +38161,9 @@ MonoBehaviour:
   pickupitem: {fileID: 0}
   isPickUp: 0
   pickUp: {fileID: 0}
+  pickBtn: {fileID: 0}
+  unpickBtn: {fileID: 0}
+  chickenCheck: []
 --- !u!135 &919132148769782333
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -38191,7 +38194,7 @@ GameObject:
   - component: {fileID: 688938961}
   - component: {fileID: 919132148874108530}
   m_Layer: 0
-  m_Name: Chicken 3
+  m_Name: Chicken
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38214,6 +38217,9 @@ MonoBehaviour:
   pickupitem: {fileID: 0}
   isPickUp: 0
   pickUp: {fileID: 0}
+  pickBtn: {fileID: 0}
+  unpickBtn: {fileID: 0}
+  chickenCheck: []
 --- !u!135 &919132148874108531
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -38312,7 +38318,7 @@ GameObject:
   - component: {fileID: 819265228}
   - component: {fileID: 919132149189046958}
   m_Layer: 0
-  m_Name: Chicken 4
+  m_Name: Chicken
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38335,6 +38341,9 @@ MonoBehaviour:
   pickupitem: {fileID: 0}
   isPickUp: 0
   pickUp: {fileID: 0}
+  pickBtn: {fileID: 0}
+  unpickBtn: {fileID: 0}
+  chickenCheck: []
 --- !u!135 &919132149189046959
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -38470,6 +38479,9 @@ MonoBehaviour:
   pickupitem: {fileID: 0}
   isPickUp: 0
   pickUp: {fileID: 0}
+  pickBtn: {fileID: 0}
+  unpickBtn: {fileID: 0}
+  chickenCheck: []
 --- !u!135 &919132149511761984
 SphereCollider:
   m_ObjectHideFlags: 0

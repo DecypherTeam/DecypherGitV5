@@ -8,8 +8,6 @@ namespace Examples
 {
     public class ChickenPickUp : MonoBehaviour
     {
-        NavMeshAgent agent;
-
         public GameObject player;
         public Transform pickUpDest;
         public Rigidbody pickupitem;
@@ -25,10 +23,12 @@ namespace Examples
 
         public static bool chickenGone = false;
 
+        NavMeshAgent agent;
+
+        public GameObject[] chickenCheck;
+
         void Start()
         {
-            agent = GetComponent<NavMeshAgent>();
-
             // Get components inside the script so we won't have to manually place them in inside the inspector [START]
             player = GameObject.Find("Player");
 
@@ -38,6 +38,12 @@ namespace Examples
             pickupitem = GetComponent<Rigidbody>();
 
             pickUp = GameObject.Find("HarvestSound").GetComponent<AudioSource>();
+
+            agent = GetComponent<NavMeshAgent>();
+
+            pickBtn = GameObject.Find("pickBtn").GetComponent<TCKButton>();
+
+            unpickBtn = GameObject.Find("unpickBtn").GetComponent<TCKButton>();
             // [END]
 
             sc = gameObject.GetComponent<SphereCollider>();
@@ -46,12 +52,8 @@ namespace Examples
             isPickUp = false;
         }
 
-        void Update()
+        private void Update()
         {
-            pickBtn = GameObject.Find("pickBtn").GetComponent<TCKButton>();
-
-            unpickBtn = GameObject.Find("unpickBtn").GetComponent<TCKButton>();
-
             if (TCKInput.GetAction("pickBtn", EActionEvent.Click))
             {
                 if (isPickUp)
@@ -73,32 +75,26 @@ namespace Examples
             {
                 gameObject.GetComponent<NavMeshAgent>().enabled = true;
                 Player.carryObject = false;
-                pickupitem.constraints = RigidbodyConstraints.None;
+                pickupitem.constraints = RigidbodyConstraints.FreezeRotation;
                 anim.SetBool("isPickup", false);
                 pickupitem.useGravity = true;
                 pickupitem.transform.parent = null;
                 ActivatePickBtn();
             }
 
-            if(AltarScript.sacrificed == true)
+            if(chickenGone == true)
             {
+                print("it works bro");
                 anim.SetBool("isPickup", false);
-                ActivatePickBtn();
-                AltarScript.sacrificed = false;
-                print("this id workinig");
+                //ActivatePickBtn();
+                chickenGone = false;
             }
 
-            /*if(ObjectPickUp.helpChicken == true)
+            /*chickenCheck = GameObject.FindGameObjectsWithTag("NPC");
+            if (chickenCheck.Length == 0)
             {
-                ActivatePickBtn();
-                print("it work tho");
-            }*/
-
-            /*if(chickenGone == true)
-            {
+                print("chicken is one");
                 anim.SetBool("isPickup", false);
-                ActivatePickBtn();
-                print("it should work");
             }*/
         }
 
@@ -108,7 +104,7 @@ namespace Examples
             unpickBtn.isEnable = true;
         }
 
-        void ActivatePickBtn()
+        public void ActivatePickBtn()
         {
             unpickBtn.isEnable = false;
             pickBtn.isEnable = true;

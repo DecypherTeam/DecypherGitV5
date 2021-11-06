@@ -20,8 +20,6 @@ namespace Examples
         public TCKButton pickBtn;
         public TCKButton unpickBtn;
 
-        public static bool helpChicken = false;
-
         void Start()
         {
             // Get components inside the script so we won't have to manually place them in inside the inspector [START]
@@ -73,14 +71,12 @@ namespace Examples
                 ActivatePickBtn();
             }
 
-            if(plantScript.seedPlanted == true || ScorePoint.delivered == true || AltarScript.sacrificed == true)
+            if(plantScript.seedPlanted == true || ScorePoint.delivered == true)
             {
                 anim.SetBool("isPickup", false);
                 ActivatePickBtn();
                 plantScript.seedPlanted = false;
                 ScorePoint.delivered = false;
-                AltarScript.sacrificed = false;
-                //helpChicken = true;
             }
         }
 

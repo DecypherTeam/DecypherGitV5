@@ -14,6 +14,14 @@ namespace Examples
 
         ParticleSystem ps;
 
+        ChickenPickUp chicken;
+
+        void Start()
+        {
+            GameObject chic = GameObject.Find("Chicken");
+            chicken = chic.GetComponent<ChickenPickUp>();
+        }
+
         void Update()
         {
             ps = GameObject.Find("Particle Sacrifice").GetComponent<ParticleSystem>();
@@ -21,14 +29,15 @@ namespace Examples
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.tag == "NPC" && soundIsPlay == false)
+            if (other.gameObject.tag == "NPC")
             {
+                //chicken.ActivatePickBtn();
+                ChickenPickUp.chickenGone = true;
                 sacrificed = true;
                 Destroy(other.gameObject);
                 Debug.Log("Chicken is sacrificed");
                 PlaySound();
                 PlayParticles();
-                soundIsPlay = false;
             }
         }
 
