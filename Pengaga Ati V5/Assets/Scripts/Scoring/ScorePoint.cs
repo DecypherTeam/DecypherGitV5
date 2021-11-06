@@ -13,6 +13,8 @@ namespace Examples
 
         public AudioSource deliveredSound;
 
+        public static bool delivered = false;
+
         void Update()
         {
             if(ScoringSystem.theScore == 10 && winSoundIsPlay == false)
@@ -30,6 +32,7 @@ namespace Examples
                 Destroy(other.gameObject);
                 ScoringSystem.theScore += 1;
                 deliveredSound.Play();
+                delivered = true;
             }
         }
 

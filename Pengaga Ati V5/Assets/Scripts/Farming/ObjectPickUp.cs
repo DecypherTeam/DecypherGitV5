@@ -17,8 +17,6 @@ namespace Examples
 
         public AudioSource pickUp;
 
-        //public GameObject pickBtnObject;
-        public GameObject unpickBtnObject;
         public TCKButton pickBtn;
         public TCKButton unpickBtn;
 
@@ -44,10 +42,8 @@ namespace Examples
         private void Update()
         {
             pickBtn = GameObject.Find("pickBtn").GetComponent<TCKButton>();
-            //pickBtn = pickBtnObject.GetComponent<TCKButton>();
 
             unpickBtn = GameObject.Find("unpickBtn").GetComponent<TCKButton>();
-            //unpickBtn = unpickBtnObject.GetComponent<TCKButton>();
 
             if (TCKInput.GetAction("pickBtn", EActionEvent.Click))
             {
@@ -61,8 +57,7 @@ namespace Examples
                     pickupitem.constraints = RigidbodyConstraints.FreezeAll;
                     isPickUp = false;
                     pickUp.Play();
-                    pickBtn.isEnable = false;
-                    unpickBtn.isEnable = true;
+                    ActivateUnpickBtn();
                 }
             }
 
@@ -73,9 +68,28 @@ namespace Examples
                 anim.SetBool("isPickup", false);
                 pickupitem.useGravity = true;
                 pickupitem.transform.parent = null;
-                unpickBtn.isEnable = false;
-                pickBtn.isEnable = true;
+                ActivatePickBtn();
             }
+
+            if(plantScript.seedPlanted == true || ScorePoint.delivered == true)
+            {
+                anim.SetBool("isPickup", false);
+                ActivatePickBtn();
+                plantScript.seedPlanted = false;
+                ScorePoint.delivered = false;
+            }
+        }
+
+        void ActivateUnpickBtn()
+        {
+            pickBtn.isEnable = false;
+            unpickBtn.isEnable = true;
+        }
+
+        void ActivatePickBtn()
+        {
+            unpickBtn.isEnable = false;
+            pickBtn.isEnable = true;
         }
 
         private void OnTriggerStay(Collider other)
