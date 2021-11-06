@@ -140,7 +140,7 @@ namespace Examples
         // PlayerRotation
         public void PlayerRotation( float horizontal, float vertical )
         {
-            myTransform.Rotate( 0f, horizontal * 12f, 0f );
+            myTransform.Rotate( 0f, horizontal * 9f, 0f );
             rotation += vertical * 12f;
             rotation = Mathf.Clamp( rotation, -60f, 60f );
             cameraTransform.localEulerAngles = new Vector3(9.61f, cameraTransform.localEulerAngles.y, 0f );
