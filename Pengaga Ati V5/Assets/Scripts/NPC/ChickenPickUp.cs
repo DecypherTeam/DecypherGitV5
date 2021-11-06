@@ -23,6 +23,8 @@ namespace Examples
         public TCKButton pickBtn;
         public TCKButton unpickBtn;
 
+        public static bool chickenGone = false;
+
         void Start()
         {
             agent = GetComponent<NavMeshAgent>();
@@ -44,14 +46,13 @@ namespace Examples
             isPickUp = false;
         }
 
-        // Update is called once per frame
         void Update()
         {
             pickBtn = GameObject.Find("pickBtn").GetComponent<TCKButton>();
 
             unpickBtn = GameObject.Find("unpickBtn").GetComponent<TCKButton>();
 
-            if (TCKInput.GetAction("pickBtn", EActionEvent.Press))
+            if (TCKInput.GetAction("pickBtn", EActionEvent.Click))
             {
                 if (isPickUp)
                 {
@@ -78,6 +79,27 @@ namespace Examples
                 pickupitem.transform.parent = null;
                 ActivatePickBtn();
             }
+
+            if(AltarScript.sacrificed == true)
+            {
+                anim.SetBool("isPickup", false);
+                ActivatePickBtn();
+                AltarScript.sacrificed = false;
+                print("this id workinig");
+            }
+
+            /*if(ObjectPickUp.helpChicken == true)
+            {
+                ActivatePickBtn();
+                print("it work tho");
+            }*/
+
+            /*if(chickenGone == true)
+            {
+                anim.SetBool("isPickup", false);
+                ActivatePickBtn();
+                print("it should work");
+            }*/
         }
 
         void ActivateUnpickBtn()

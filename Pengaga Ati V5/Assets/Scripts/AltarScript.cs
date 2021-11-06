@@ -23,9 +23,9 @@ namespace Examples
         {
             if (other.gameObject.tag == "NPC" && soundIsPlay == false)
             {
+                sacrificed = true;
                 Destroy(other.gameObject);
                 Debug.Log("Chicken is sacrificed");
-                sacrificed = true;
                 PlaySound();
                 PlayParticles();
                 soundIsPlay = false;
