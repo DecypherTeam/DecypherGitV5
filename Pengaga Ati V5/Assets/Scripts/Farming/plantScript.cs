@@ -20,11 +20,18 @@ namespace Examples
 
         public bool canPlant = true;
 
-        // Start is called before the first frame update
+        private GameObject[] checkPlant;
+
+        
         void Start()
         {
             /*GameObject spawnenemy = GameObject.Find("SpawnEnemy");
             spawnEnemy = spawnenemy.GetComponent<SpawnEnemy>();*/
+        }
+
+        void Update()
+        {
+            //CheckPlant();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -44,7 +51,18 @@ namespace Examples
         {
             if (other.gameObject.tag == "Plant")
             {
-                print("plant is removed");
+                canPlant = true;
+            }
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if(other.gameObject.tag == "Plant")
+            {
+                canPlant = false;
+            }
+            else
+            {
                 canPlant = true;
             }
         }
@@ -52,13 +70,23 @@ namespace Examples
         public void spawnplant()
         {
             Instantiate(chillie, transform.position, transform.rotation);
-            canPlant = false;
+            //canPlant = false;
 
             /*enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
             if (enemyCheck.Length == 0)
             {
                 spawnEnemy.enemySpawn = true;
             }*/
+        }
+
+        void CheckPlant()
+        {
+            checkPlant = GameObject.FindGameObjectsWithTag("Plant");
+            if(checkPlant.Length == 0)
+            {
+                canPlant = true;
+                print("can plant = true");
+            }
         }
     }
 }

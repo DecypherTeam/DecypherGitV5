@@ -16,6 +16,8 @@ namespace Examples
 
         public AudioSource eatSound;
 
+        public static bool plantEaten = false;
+
         void Start()
         {
             crop.GetComponent<ObjectPickUp>().enabled = false;
@@ -58,6 +60,7 @@ namespace Examples
             {
                 eatSound.Play();
                 Destroy(crop);
+                plantEaten = true;
             }
         }
 

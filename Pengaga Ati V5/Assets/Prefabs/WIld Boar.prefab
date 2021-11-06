@@ -677,6 +677,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mesh: {fileID: 4884995664478693370}
   ghostMaterial: {fileID: 2100000, guid: 40286eb0c268bc74ea4500942d2bfe8e, type: 2}
+  deathSound: {fileID: 0}
+  angelSound: {fileID: 0}
 --- !u!1 &4884995664168833700
 GameObject:
   m_ObjectHideFlags: 0
