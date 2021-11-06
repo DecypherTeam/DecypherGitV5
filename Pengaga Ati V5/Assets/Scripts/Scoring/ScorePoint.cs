@@ -33,6 +33,7 @@ namespace Examples
                 ScoringSystem.theScore += 1;
                 deliveredSound.Play();
                 delivered = true;
+                Player.carryObject = false;
             }
         }
 

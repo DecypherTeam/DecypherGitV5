@@ -55,7 +55,7 @@ namespace Examples
             }
 
             // Assigning the shooting mechanics to the shooting button
-            if ( TCKInput.GetAction( "fireBtn", EActionEvent.Press ) )
+            if ( TCKInput.GetAction( "fireBtn", EActionEvent.Press ) && carryObject == false)
             {
                 PlayerFiring();
                 animator.SetBool("isShooting", true);
