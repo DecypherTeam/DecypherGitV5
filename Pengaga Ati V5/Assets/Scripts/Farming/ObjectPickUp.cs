@@ -56,7 +56,7 @@ namespace Examples
             if (TCKInput.GetAction("pickBtn", EActionEvent.Up))
             {
                 Player.carryObject = false;
-                pickupitem.constraints = RigidbodyConstraints.None;
+                pickupitem.constraints = RigidbodyConstraints.FreezeRotation;
                 anim.SetBool("isPickup", false);
                 pickupitem.useGravity = true;
                 pickupitem.transform.parent = null;
