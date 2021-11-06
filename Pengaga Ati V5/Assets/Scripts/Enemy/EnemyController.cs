@@ -26,7 +26,7 @@ namespace Examples
 
         public AudioSource deathSound;
 
-        public AudioSource angelSound;
+        /*public AudioSource angelSound;*/
 
         private void Start()
         {
@@ -64,7 +64,7 @@ namespace Examples
 
             deathSound = GameObject.Find("BoarDeadSound").GetComponent<AudioSource>();
 
-            angelSound = GameObject.Find("Angel Choir").GetComponent<AudioSource>();
+            /*angelSound = GameObject.Find("Angel Choir").GetComponent<AudioSource>();*/
         }
 
         private void GoToTarget()
@@ -83,7 +83,7 @@ namespace Examples
         public IEnumerator WaitBeforeGhost()
         {
             yield return new WaitForSeconds(2);
-            angelSound.Play();
+            /*angelSound.Play();*/
             mesh.GetComponent<Renderer>().material = ghostMaterial;
             rb.useGravity = false;
             agent.baseOffset = 2f;
