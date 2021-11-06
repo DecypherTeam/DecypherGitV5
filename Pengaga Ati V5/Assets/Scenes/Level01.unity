@@ -24385,7 +24385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -140, y: 21.646}
+  m_AnchoredPosition: {x: -172, y: 13.651}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308809941
@@ -25177,6 +25177,7 @@ MonoBehaviour:
   chillieSeed: {fileID: 9145892104289000153, guid: 2461318a5501b5e49b1855b238dbf70a,
     type: 3}
   chillieSeedSpawn: 0
+  seedCheck: []
 --- !u!1001 &1366297934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26844,8 +26845,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 220, y: -100.31207}
-  m_SizeDelta: {x: 162.9, y: 144.584}
+  m_AnchoredPosition: {x: 259.535, y: -91.671}
+  m_SizeDelta: {x: 241.97, y: 127.302}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1542414600
 MonoBehaviour:
