@@ -20,5 +20,6 @@ public class LevelManager : MonoBehaviour
     public void LoadNextLevel(string LevelName)
     {
         Application.LoadLevel(LevelName);
+        Time.timeScale = 1;
     }
 }
