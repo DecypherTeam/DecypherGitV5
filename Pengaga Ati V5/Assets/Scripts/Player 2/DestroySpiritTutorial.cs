@@ -9,6 +9,8 @@ public class DestroySpiritTutorial : MonoBehaviour
     {
         public GameObject spiritCheck;
         public GameObject timer;
+        public GameObject scoreboard;
+        public GameObject scorebg;
 
         public ParticleSystem ps;
 
@@ -17,6 +19,8 @@ public class DestroySpiritTutorial : MonoBehaviour
         private void Start()
         {
             timer.SetActive(false);
+            scoreboard.SetActive(false);
+            scorebg.SetActive(false);
         }
 
         void Update()
@@ -33,6 +37,8 @@ public class DestroySpiritTutorial : MonoBehaviour
                     ps.Play();
                     windSound.Play();
                     timer.SetActive(true);
+                    scoreboard.SetActive(true);
+                    scorebg.SetActive(true);
                 }
             }
         }
