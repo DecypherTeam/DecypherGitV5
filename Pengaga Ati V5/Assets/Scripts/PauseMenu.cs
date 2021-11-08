@@ -59,5 +59,10 @@ namespace Examples
             Time.timeScale = 1f;
             SceneManager.LoadScene(sceneID);
         }
+
+        public void Quit()
+        {
+            Application.Quit();
+        }
     }
 }

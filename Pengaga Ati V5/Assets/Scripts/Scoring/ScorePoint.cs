@@ -15,6 +15,11 @@ namespace Examples
 
         public static bool delivered = false;
 
+        void Start()
+        {
+            ScoringSystem.theScore = 0;
+        }
+
         void Update()
         {
             if(ScoringSystem.theScore == 10 && winSoundIsPlay == false)
