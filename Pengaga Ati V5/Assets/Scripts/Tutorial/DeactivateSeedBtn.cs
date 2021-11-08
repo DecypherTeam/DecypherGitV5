@@ -9,11 +9,13 @@ public class DeactivateSeedBtn : MonoBehaviour
     public TCKButton ActivateSeed;
     public TCKButton ActivatePlant;
 
+    public AudioSource click;
+
     // Start is called before the first frame update
     void Start()
     {
         ActivateSeed = GameObject.Find("ActivateSeed").GetComponent<TCKButton>();
-        ActivateSeed.isEnable = true;
+        //ActivateSeed.isEnable = true;
         ActivatePlant = GameObject.Find("ActivatePlant").GetComponent<TCKButton>();
         ActivatePlant.isEnable = false;
 
@@ -24,6 +26,7 @@ public class DeactivateSeedBtn : MonoBehaviour
     {
         if (TCKInput.GetAction("ActivateSeed", EActionEvent.Click))
         {
+            click.Play();
             ActivateSeed.isEnable = false;
             ActivatePlant.isEnable = true;
         }

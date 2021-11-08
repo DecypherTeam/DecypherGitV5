@@ -14,10 +14,13 @@ public class ScoringPointTut : MonoBehaviour
 
     public static bool delivered = false;
 
+    public GameObject deliveredBtn;
+
     void Update()
     {
         if (ScoringSystemTutorial.theScore == 1 && winSoundIsPlay == false)
         {
+                deliveredBtn.SetActive(false);
             winScreen.SetActive(true);
             Time.timeScale = 0;
             PlaySound();

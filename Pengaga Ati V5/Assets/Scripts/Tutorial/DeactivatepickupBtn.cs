@@ -10,11 +10,13 @@ public class DeactivatepickupBtn : MonoBehaviour
     public TCKButton ActivateSeed;
     public TCKButton spawnSeedBtn;
 
+    public AudioSource click;
+
     // Start is called before the first frame update
     void Start()
     {
         ActivatePickup = GameObject.Find("ActivatePickup").GetComponent<TCKButton>();
-        ActivatePickup.isEnable = true;
+        /*ActivatePickup.isEnable = true;*/
         ActivateSeed = GameObject.Find("ActivateSeed").GetComponent<TCKButton>();
         ActivateSeed.isEnable = false;
         spawnSeedBtn = GameObject.Find("spawnSeedBtn").GetComponent<TCKButton>();
@@ -27,6 +29,7 @@ public class DeactivatepickupBtn : MonoBehaviour
     {
         if (TCKInput.GetAction("ActivatePickup", EActionEvent.Click))
         {
+            click.Play();
             ActivatePickup.isEnable = false;
             ActivateSeed.isEnable = true;
             spawnSeedBtn.isEnable = true;

@@ -8,11 +8,13 @@ public class ActivatePickchic : MonoBehaviour
     public TCKButton ActivateSpirit;
     public TCKButton ActivateTimer;
 
+    public AudioSource click;
+
     // Start is called before the first frame update
     void Start()
     {
         ActivateSpirit = GameObject.Find("ActivateSpirit").GetComponent<TCKButton>();
-        ActivateSpirit.isEnable = true;
+        //ActivateSpirit.isEnable = true;
         ActivateTimer = GameObject.Find("ActivateTimer").GetComponent<TCKButton>();
         ActivateTimer.isEnable = false;
 
@@ -23,6 +25,7 @@ public class ActivatePickchic : MonoBehaviour
         //the dialogue box for the specific button setActive is equal to true)
         if (TCKInput.GetAction("ActivateSpirit", EActionEvent.Click))
         {
+            click.Play();
             ActivateSpirit.isEnable = false;
             ActivateTimer.isEnable = true;
         }

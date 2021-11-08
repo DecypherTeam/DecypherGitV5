@@ -17,7 +17,7 @@ namespace Examples
 
         void Update()
         {
-            if (timeValue > 0)
+            if (PauseMenu.startTime == true && timeValue > 0)
             {
                 timeValue -= Time.deltaTime;
             }
@@ -33,7 +33,7 @@ namespace Examples
             }
             if (AltarScript.sacrificed == true)
             {
-                timeValue += 20;
+                timeValue += 50;
                 AltarScript.sacrificed = false;
             }
 

@@ -10,11 +10,14 @@ public class DeactivateSpiritBtn : MonoBehaviour
     public TCKButton killSpiritBtn;
     public TCKButton ActivateSpirit;
     public TCKButton ActivateTutorial;
+
+    public AudioSource click;
+
     // Start is called before the first frame update
     void Start()
     {
         ActivateWildBoar = GameObject.Find("ActivateWildBoar").GetComponent<TCKButton>();
-        ActivateWildBoar.isEnable = true;
+        //ActivateWildBoar.isEnable = true;
         ActivateSpirit = GameObject.Find("ActivateSpirit").GetComponent<TCKButton>();
         ActivateSpirit.isEnable = false;
         killSpiritBtn = GameObject.Find("killSpiritBtn").GetComponent<TCKButton>();
@@ -27,6 +30,7 @@ public class DeactivateSpiritBtn : MonoBehaviour
         //the dialogue box for the specific button setActive is equal to true)
         if (TCKInput.GetAction("ActivateWildBoar", EActionEvent.Click))
         {
+            click.Play();
             ActivateWildBoar.isEnable = false;
             ActivateTutorial.isEnable = false;
             killSpiritBtn.isEnable = true;

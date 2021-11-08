@@ -5,6 +5,8 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
 
+    public AudioSource clickNext;
+
     // Use this for initialization
     void Start()
     {
@@ -19,6 +21,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadNextLevel(string LevelName)
     {
+        clickNext.Play();
         Application.LoadLevel(LevelName);
         Time.timeScale = 1;
     }

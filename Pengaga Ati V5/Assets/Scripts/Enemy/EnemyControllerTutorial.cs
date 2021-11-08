@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 namespace Examples {
+
 public class EnemyControllerTutorial : MonoBehaviour
 {
     NavMeshAgent agent;
@@ -25,7 +26,11 @@ public class EnemyControllerTutorial : MonoBehaviour
 
     public AudioSource deathSound;
 
-    /*public AudioSource angelSound;*/
+        /*public AudioSource angelSound;*/
+
+        public AudioSource enemyComing;
+
+        private bool playsound = false;
 
     private void Start()
     {
@@ -46,6 +51,7 @@ public class EnemyControllerTutorial : MonoBehaviour
         if (target && GrownCheckTutorial.plantIsGrown == true)
         {
             GoToTarget();
+                    
         }
         else
         {
@@ -57,6 +63,12 @@ public class EnemyControllerTutorial : MonoBehaviour
             StartCoroutine(DestroyEnemy());
             destroy = false;
         }
+
+        /*if(playsound == true)
+            {
+                enemyComing.Play();
+                playsound = false;
+            }*/
 
         ps = GameObject.Find("Particle Spirit").GetComponent<ParticleSystem>();
         ps.transform.position = transform.position;
@@ -71,7 +83,8 @@ public class EnemyControllerTutorial : MonoBehaviour
         animator.SetBool("isRunning", true);
         agent.isStopped = false;
         agent.SetDestination(target.transform.position);
-    }
+            playsound = true;
+        }
 
     private void StopEnemy()
     {
@@ -111,6 +124,7 @@ public class EnemyControllerTutorial : MonoBehaviour
     public IEnumerator DestroyEnemy()
     {
         yield return new WaitForSeconds(1);
+            enemyComing.Pause();
         Destroy(gameObject);
     }
 }

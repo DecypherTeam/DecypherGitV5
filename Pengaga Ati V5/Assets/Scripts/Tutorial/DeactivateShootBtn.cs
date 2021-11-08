@@ -10,11 +10,13 @@ public class DeactivateShootBtn : MonoBehaviour
     public TCKButton ActivateRain;
     public TCKButton fireBtn;
 
+    public AudioSource click;
+
     // Start is called before the first frame update
     void Start()
     {
         ActivateRain = GameObject.Find("ActivateRain").GetComponent<TCKButton>();
-        ActivateRain.isEnable = true;
+        //ActivateRain.isEnable = true;
         ActivateWildBoar = GameObject.Find("ActivateWildBoar").GetComponent<TCKButton>();
         ActivateWildBoar.isEnable = false;
         fireBtn = GameObject.Find("fireBtn").GetComponent<TCKButton>();
@@ -27,6 +29,7 @@ public class DeactivateShootBtn : MonoBehaviour
     {
         if (TCKInput.GetAction("ActivateRain", EActionEvent.Click))
         {
+            click.Play();
             ActivateRain.isEnable = false;
             fireBtn.isEnable = true;
             ActivateWildBoar.isEnable = true;

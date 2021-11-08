@@ -8,11 +8,13 @@ public class ActivateTut : MonoBehaviour
     public TCKButton ActivateTutorial;
     public TCKButton ActivateJoystick;
 
+    public AudioSource click;
+
     // Start is called before the first frame update
     void Start()
     {
         ActivateTutorial = GameObject.Find("ActivateTutorial").GetComponent<TCKButton>();
-        ActivateTutorial.isEnable = true;
+        /*ActivateTutorial.isEnable = true;*/
         ActivateJoystick = GameObject.Find("ActivateJoystick").GetComponent<TCKButton>();
         ActivateJoystick.isEnable = false;
 
@@ -23,6 +25,7 @@ public class ActivateTut : MonoBehaviour
     {
         if (TCKInput.GetAction("ActivateTutorial", EActionEvent.Click))
         {
+            click.Play();
             ActivateTutorial.isEnable = false;
             ActivateJoystick.isEnable = true;
         }

@@ -10,11 +10,13 @@ public class ActivateJoy : MonoBehaviour
     public TCKButton unpickBtn;
     public TCKButton ActivatePickup;
 
+    public AudioSource click;
+
     // Start is called before the first frame update
     void Start()
     {
         ActivateJoystick = GameObject.Find("ActivateJoystick").GetComponent<TCKButton>();
-        ActivateJoystick.isEnable = true;
+        /*ActivateJoystick.isEnable = true;*/
         pickBtn = GameObject.Find("pickBtn").GetComponent<TCKButton>();
         pickBtn.isEnable = false;
         unpickBtn = GameObject.Find("unpickBtn").GetComponent<TCKButton>();
@@ -29,6 +31,7 @@ public class ActivateJoy : MonoBehaviour
     {
         if (TCKInput.GetAction("ActivateJoystick", EActionEvent.Click))
         {
+            click.Play();
             ActivateJoystick.isEnable = false;
             pickBtn.isEnable = true;
             unpickBtn.isEnable = true;

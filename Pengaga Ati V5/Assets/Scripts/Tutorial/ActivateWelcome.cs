@@ -8,6 +8,8 @@ public class ActivateWelcome : MonoBehaviour
     public TCKButton WelcomeTutorial;
     public TCKButton ActivateTutorial;
 
+    public AudioSource click;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,6 @@ public class ActivateWelcome : MonoBehaviour
         WelcomeTutorial.isEnable = true;
         ActivateTutorial = GameObject.Find("ActivateTutorial").GetComponent<TCKButton>();
         ActivateTutorial.isEnable = false;
-
     }
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class ActivateWelcome : MonoBehaviour
     {
         if (TCKInput.GetAction("WelcomeTutorial", EActionEvent.Click))
         {
+            click.Play();
             WelcomeTutorial.isEnable = false;
             ActivateTutorial.isEnable = true;
         }

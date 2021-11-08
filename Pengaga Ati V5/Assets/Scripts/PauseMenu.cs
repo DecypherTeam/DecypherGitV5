@@ -3,43 +3,61 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+namespace Examples
 {
-    [SerializeField] GameObject pauseMenu;
-    [SerializeField] GameObject goalMenu;
-
-    public void Pause()
+    public class PauseMenu : MonoBehaviour
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-    }
+        [SerializeField] GameObject pauseMenu;
+        [SerializeField] GameObject goalMenu;
+        [SerializeField] GameObject score;
+        [SerializeField] GameObject timer;
 
-    public void Resume()
-    {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-    }
+        public AudioSource click;
 
-    public void Home(int sceneID)
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(sceneID);
-    }
+        public static bool startTime = false;
 
-    public void Settings(int sceneID)
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(sceneID);
-    }
+        public void Pause()
+        {
+            click.Play();
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
 
-    public void Play()
-    {
-        goalMenu.SetActive(false);
-    }
+        public void Resume()
+        {
+            click.Play();
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+        }
 
-    public void Restart(int sceneID)
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(sceneID);
+        public void Home(int sceneID)
+        {
+            click.Play();
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(sceneID);
+        }
+
+        public void Settings(int sceneID)
+        {
+            click.Play();
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(sceneID);
+        }
+
+        public void Play()
+        {
+            click.Play();
+            goalMenu.SetActive(false);
+            score.SetActive(true);
+            timer.SetActive(true);
+            startTime = true;
+        }
+
+        public void Restart(int sceneID)
+        {
+            click.Play();
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(sceneID);
+        }
     }
 }
