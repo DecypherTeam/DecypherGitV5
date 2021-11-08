@@ -24,7 +24,7 @@ public class Tutorial : MonoBehaviour
         StartDialogue();
         Continue = GameObject.Find("Continue").GetComponent<Button>();
         Continue.enabled = true;
-        ActivateTutorial = GameObject.Find("ActivateTutorial").GetComponent<TCKButton>();
+        //ActivateTutorial = GameObject.Find("ActivateTutorial").GetComponent<TCKButton>();
         ActivateTutorial.isEnable = false;
     }
 

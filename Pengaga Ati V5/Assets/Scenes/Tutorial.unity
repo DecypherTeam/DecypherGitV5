@@ -16981,11 +16981,11 @@ MonoBehaviour:
   active: 1
   visible: 1
   swipeOut: 0
-  normalSprite: {fileID: 21300000, guid: 78baccf44740b144692ede03129be224, type: 3}
+  normalSprite: {fileID: 21300000, guid: 6fd7bdd66f7038e4ca19ee5b16f1b491, type: 3}
   pressedSprite: {fileID: 0}
   pressedColor:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
 --- !u!114 &605398732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17242,11 +17242,11 @@ MonoBehaviour:
   active: 1
   visible: 1
   swipeOut: 0
-  normalSprite: {fileID: 21300000, guid: 78baccf44740b144692ede03129be224, type: 3}
+  normalSprite: {fileID: 21300000, guid: 4cacb5d70f61b894990d8892cc05b145, type: 3}
   pressedSprite: {fileID: 0}
   pressedColor:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 2785017855
 --- !u!114 &615397349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18420,11 +18420,11 @@ MonoBehaviour:
   active: 1
   visible: 1
   swipeOut: 0
-  normalSprite: {fileID: 21300000, guid: 78baccf44740b144692ede03129be224, type: 3}
+  normalSprite: {fileID: 21300000, guid: 8a3e72ff4098f434a95f3d231baf5a70, type: 3}
   pressedSprite: {fileID: 0}
   pressedColor:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 2785017855
 --- !u!114 &711549016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19902,11 +19902,11 @@ MonoBehaviour:
   active: 1
   visible: 1
   swipeOut: 0
-  normalSprite: {fileID: 21300000, guid: 78baccf44740b144692ede03129be224, type: 3}
+  normalSprite: {fileID: 21300000, guid: c8f39d568347b194287aef69e595bc6c, type: 3}
   pressedSprite: {fileID: 0}
   pressedColor:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 2785017855
 --- !u!114 &826885696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22137,11 +22137,11 @@ MonoBehaviour:
   active: 1
   visible: 1
   swipeOut: 0
-  normalSprite: {fileID: 21300000, guid: 78baccf44740b144692ede03129be224, type: 3}
+  normalSprite: {fileID: 21300000, guid: 1f1e03f065fbf8e49bdb11144e361efe, type: 3}
   pressedSprite: {fileID: 0}
   pressedColor:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 2785017855
 --- !u!114 &1058710307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24257,11 +24257,11 @@ MonoBehaviour:
   active: 1
   visible: 1
   swipeOut: 0
-  normalSprite: {fileID: 21300000, guid: 78baccf44740b144692ede03129be224, type: 3}
+  normalSprite: {fileID: 21300000, guid: 616d62ee601135349a8fd8475b881d7f, type: 3}
   pressedSprite: {fileID: 0}
   pressedColor:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 2785017855
 --- !u!114 &1330564001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24357,7 +24357,7 @@ RectTransform:
   - {fileID: 1444386892}
   - {fileID: 1630588811}
   m_Father: {fileID: 1564652790}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -31593,7 +31593,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1564652790}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -31623,11 +31623,11 @@ MonoBehaviour:
   active: 1
   visible: 1
   swipeOut: 0
-  normalSprite: {fileID: 21300000, guid: 78baccf44740b144692ede03129be224, type: 3}
+  normalSprite: {fileID: 21300000, guid: 89f0dda12345f2e4dbe0e97711996c4b, type: 3}
   pressedSprite: {fileID: 0}
   pressedColor:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 2785017855
 --- !u!114 &1457539753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32653,8 +32653,8 @@ RectTransform:
   - {fileID: 1245243930}
   - {fileID: 2034531879}
   - {fileID: 127915750}
-  - {fileID: 1457539751}
   - {fileID: 1333743202}
+  - {fileID: 1457539751}
   - {fileID: 1759507916}
   - {fileID: 605398730}
   - {fileID: 1730551539}
@@ -34178,11 +34178,11 @@ MonoBehaviour:
   active: 1
   visible: 1
   swipeOut: 0
-  normalSprite: {fileID: 21300000, guid: 78baccf44740b144692ede03129be224, type: 3}
+  normalSprite: {fileID: 21300000, guid: 97f0223127f82dc458fdd7bdf831e09e, type: 3}
   pressedSprite: {fileID: 0}
   pressedColor:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 2785017855
 --- !u!114 &1645341396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35765,11 +35765,11 @@ MonoBehaviour:
   active: 1
   visible: 1
   swipeOut: 0
-  normalSprite: {fileID: 21300000, guid: 78baccf44740b144692ede03129be224, type: 3}
+  normalSprite: {fileID: 21300000, guid: 547b9e5c3dc999f47b6ebd32a5834911, type: 3}
   pressedSprite: {fileID: 0}
   pressedColor:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 2785017855
 --- !u!114 &1730551541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41676,11 +41676,11 @@ MonoBehaviour:
   active: 1
   visible: 1
   swipeOut: 0
-  normalSprite: {fileID: 21300000, guid: 78baccf44740b144692ede03129be224, type: 3}
+  normalSprite: {fileID: 21300000, guid: d252c630e59a6d24d9a9f99bcd61517f, type: 3}
   pressedSprite: {fileID: 0}
   pressedColor:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 2785017855
 --- !u!114 &1840973594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42193,11 +42193,11 @@ MonoBehaviour:
   active: 1
   visible: 1
   swipeOut: 0
-  normalSprite: {fileID: 21300000, guid: 78baccf44740b144692ede03129be224, type: 3}
+  normalSprite: {fileID: 21300000, guid: 22b2bc5b52e4c1c4b8fc19ed91a47523, type: 3}
   pressedSprite: {fileID: 0}
   pressedColor:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 2785017855
 --- !u!114 &1871489509
 MonoBehaviour:
   m_ObjectHideFlags: 0
