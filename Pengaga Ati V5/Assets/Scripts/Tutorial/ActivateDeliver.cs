@@ -3,31 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using TouchControlsKit;
 
-public class ActivateDeliver : MonoBehaviour
+namespace Examples
 {
-    public TCKButton ActivateSacrifice;
-    public TCKButton ActivateDelivery;
-
-    public AudioSource click;
-
-    // Start is called before the first frame update
-    void Start()
+    public class ActivateDeliver : MonoBehaviour
     {
-        ActivateSacrifice = GameObject.Find("ActivateSacrifice").GetComponent<TCKButton>();
-        //ActivateSacrifice.isEnable = true;
-        ActivateDelivery = GameObject.Find("ActivateDelivery").GetComponent<TCKButton>();
-        ActivateDelivery.isEnable = false;
+        public TCKButton ActivateTimer;
+        public TCKButton ActivateSacrifice;
+        public TCKButton ActivateDelivery;
 
-    }
+        public AudioSource click;
 
-    void Update()
-    {
-        //the dialogue box for the specific button setActive is equal to true)
-        if (TCKInput.GetAction("ActivateSacrifice", EActionEvent.Click))
+        // Start is called before the first frame update
+        void Start()
         {
-            click.Play();
-            ActivateSacrifice.isEnable = false;
-            ActivateDelivery.isEnable = true;
+            ActivateSacrifice = GameObject.Find("ActivateSacrifice").GetComponent<TCKButton>();
+            //ActivateSacrifice.isEnable = true;
+            ActivateDelivery = GameObject.Find("ActivateDelivery").GetComponent<TCKButton>();
+            ActivateDelivery.isEnable = false;
+            ActivateTimer = GameObject.Find("ActivateTimer").GetComponent<TCKButton>();
+            ActivateTimer.isEnable = false;
+        }
+
+        void Update()
+        {
+            //the dialogue box for the specific button setActive is equal to true)
+            if (TCKInput.GetAction("ActivateSacrifice", EActionEvent.Click) && AltarScript.sacrificedForReal == true)
+            {
+                click.Play();
+                ActivateSacrifice.isEnable = false;
+                ActivateDelivery.isEnable = true;
+                AltarScript.sacrificedForReal = false;
+            }
         }
     }
 }

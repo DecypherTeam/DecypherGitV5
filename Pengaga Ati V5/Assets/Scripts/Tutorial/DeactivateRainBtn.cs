@@ -4,36 +4,39 @@ using UnityEngine;
 using UnityEngine.UI;
 using TouchControlsKit;
 
-public class DeactivateRainBtn : MonoBehaviour
+namespace Examples
 {
-    public TCKButton ActivatePlant;
-    public TCKButton ActivateRain;
-    public TCKButton plantSeedBtn;
-
-    public AudioSource click;
-
-    // Start is called before the first frame update
-    void Start()
+    public class DeactivateRainBtn : MonoBehaviour
     {
-        ActivatePlant = GameObject.Find("ActivatePlant").GetComponent<TCKButton>();
-        //ActivatePlant.isEnable = true;
-        ActivateRain = GameObject.Find("ActivateRain").GetComponent<TCKButton>();
-        ActivateRain.isEnable = false;
-        plantSeedBtn = GameObject.Find("plantSeedBtn").GetComponent<TCKButton>();
-        plantSeedBtn.isEnable = false;
+        public TCKButton ActivatePlant;
+        public TCKButton ActivateRain;
+        public TCKButton plantSeedBtn;
 
-    }
+        public AudioSource click;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (TCKInput.GetAction("ActivatePlant", EActionEvent.Click))
+        // Start is called before the first frame update
+        void Start()
         {
-            click.Play();
-            ActivatePlant.isEnable = false;
-            ActivateRain.isEnable = true;
-            plantSeedBtn.isEnable = true;
-        }
-    }
+            ActivatePlant = GameObject.Find("ActivatePlant").GetComponent<TCKButton>();
+            //ActivatePlant.isEnable = true;
+            ActivateRain = GameObject.Find("ActivateRain").GetComponent<TCKButton>();
+            ActivateRain.isEnable = false;
+            plantSeedBtn = GameObject.Find("plantSeedBtn").GetComponent<TCKButton>();
+            plantSeedBtn.isEnable = false;
 
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (TCKInput.GetAction("ActivatePlant", EActionEvent.Click) && plantScript.seedPlantedForReal == true)
+            {
+                click.Play();
+                ActivatePlant.isEnable = false;
+                ActivateRain.isEnable = true;
+                plantSeedBtn.isEnable = true;
+            }
+        }
+
+    }
 }

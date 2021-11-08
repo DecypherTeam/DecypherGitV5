@@ -32,6 +32,8 @@ public class EnemyControllerTutorial : MonoBehaviour
 
         private bool playsound = false;
 
+        public static bool boarShot = false;
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -51,7 +53,6 @@ public class EnemyControllerTutorial : MonoBehaviour
         if (target && GrownCheckTutorial.plantIsGrown == true)
         {
             GoToTarget();
-                    
         }
         else
         {
@@ -107,6 +108,7 @@ public class EnemyControllerTutorial : MonoBehaviour
     {
         if (collision.gameObject.name == "Sphere")
         {
+            boarShot = true;
             animator.SetBool("isDead", true);
             agent.speed = 0f;
             deathSound.Play();

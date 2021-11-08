@@ -10,6 +10,10 @@ public class ActivatePickchic : MonoBehaviour
 
     public AudioSource click;
 
+    public TCKButton killSpiritBtn;
+
+    private bool isClicked = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,17 +21,23 @@ public class ActivatePickchic : MonoBehaviour
         //ActivateSpirit.isEnable = true;
         ActivateTimer = GameObject.Find("ActivateTimer").GetComponent<TCKButton>();
         ActivateTimer.isEnable = false;
-
+        killSpiritBtn = GameObject.Find("killSpiritBtn").GetComponent<TCKButton>();
     }
 
     void Update()
     {
-        //the dialogue box for the specific button setActive is equal to true)
-        if (TCKInput.GetAction("ActivateSpirit", EActionEvent.Click))
+        if (TCKInput.GetAction("killSpiritBtn", EActionEvent.Click))
+        {
+            isClicked = true;
+        }
+
+            //the dialogue box for the specific button setActive is equal to true)
+        if (isClicked == true)
         {
             click.Play();
             ActivateSpirit.isEnable = false;
             ActivateTimer.isEnable = true;
+            isClicked = false;
         }
     }
 }

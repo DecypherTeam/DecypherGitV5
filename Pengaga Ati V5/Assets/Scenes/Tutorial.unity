@@ -17176,6 +17176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActivateSeed: {fileID: 0}
   ActivatePlant: {fileID: 0}
+  spawnSeedBtn: {fileID: 0}
   click: {fileID: 1049564589}
 --- !u!1 &620718119
 GameObject:
@@ -19839,6 +19840,7 @@ MonoBehaviour:
   ActivateWildBoar: {fileID: 0}
   ActivateRain: {fileID: 0}
   fireBtn: {fileID: 0}
+  plantSeedBtn: {fileID: 0}
   click: {fileID: 1049564589}
 --- !u!1001 &831999073
 PrefabInstance:
@@ -22141,7 +22143,7 @@ RectTransform:
   m_GameObject: {fileID: 1058710304}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5497644, y: 0.5497644, z: 0.5497644}
   m_Children: []
   m_Father: {fileID: 1564652790}
   m_RootOrder: 26
@@ -22149,7 +22151,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -5, y: 313}
-  m_SizeDelta: {x: 1024, y: 412.5}
+  m_SizeDelta: {x: 2048, y: 1066}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1058710306
 MonoBehaviour:
@@ -22174,7 +22176,7 @@ MonoBehaviour:
   active: 1
   visible: 1
   swipeOut: 0
-  normalSprite: {fileID: 21300000, guid: 1f1e03f065fbf8e49bdb11144e361efe, type: 3}
+  normalSprite: {fileID: 21300000, guid: 5ddfbe99e7bd7374e82e340a93f262b5, type: 3}
   pressedSprite: {fileID: 0}
   pressedColor:
     serializedVersion: 2
@@ -22199,7 +22201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1f1e03f065fbf8e49bdb11144e361efe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ddfbe99e7bd7374e82e340a93f262b5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22229,6 +22231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37b2d57aec8e1f4bb39eff160e2eaaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActivateTimer: {fileID: 0}
   ActivateSacrifice: {fileID: 0}
   ActivateDelivery: {fileID: 0}
   click: {fileID: 1049564589}
@@ -22612,7 +22615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598182e7236034d4fbb5925b25515894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeValue: 90
+  timeValue: 120
   timeText: {fileID: 1099921888}
   loseScreen: {fileID: 127915747}
   loseSound: {fileID: 1853755683}
@@ -24353,6 +24356,7 @@ MonoBehaviour:
   ActivateSpirit: {fileID: 0}
   ActivateTimer: {fileID: 0}
   click: {fileID: 1049564589}
+  killSpiritBtn: {fileID: 0}
 --- !u!1 &1333743201
 GameObject:
   m_ObjectHideFlags: 0
@@ -34187,7 +34191,7 @@ RectTransform:
   m_GameObject: {fileID: 1645341393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5462434, y: 0.5462434, z: 0.5462434}
   m_Children: []
   m_Father: {fileID: 1564652790}
   m_RootOrder: 25
@@ -34195,7 +34199,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -5, y: 313}
-  m_SizeDelta: {x: 1024, y: 412.5}
+  m_SizeDelta: {x: 2048, y: 1066}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1645341395
 MonoBehaviour:
@@ -34245,7 +34249,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 97f0223127f82dc458fdd7bdf831e09e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15bb393a60213df49893f924f5c2bcc0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

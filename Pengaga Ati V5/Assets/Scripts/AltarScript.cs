@@ -8,6 +8,8 @@ namespace Examples
     {
         public static bool sacrificed = false;
 
+        public static bool sacrificedForReal = false;
+
         public AudioSource bonusTime;
         public AudioSource chickenSacrificed;
         private bool soundIsPlay = false;
@@ -23,6 +25,7 @@ namespace Examples
         {
             if (other.gameObject.tag == "NPC" && soundIsPlay == false)
             {
+                sacrificedForReal = true;
                 Destroy(other.gameObject);
                 Debug.Log("Chicken is sacrificed");
                 sacrificed = true;

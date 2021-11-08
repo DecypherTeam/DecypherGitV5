@@ -9,8 +9,11 @@ public class DeactivateShootBtn : MonoBehaviour
     public TCKButton ActivateWildBoar;
     public TCKButton ActivateRain;
     public TCKButton fireBtn;
+    public TCKButton plantSeedBtn;
 
     public AudioSource click;
+
+    private bool isClicked = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +24,18 @@ public class DeactivateShootBtn : MonoBehaviour
         ActivateWildBoar.isEnable = false;
         fireBtn = GameObject.Find("fireBtn").GetComponent<TCKButton>();
         fireBtn.isEnable = false;
-
+        plantSeedBtn = GameObject.Find("plantSeedBtn").GetComponent<TCKButton>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (TCKInput.GetAction("ActivateRain", EActionEvent.Click))
+        if (TCKInput.GetAction("plantSeedBtn", EActionEvent.Press))
+        {
+            isClicked = true;
+        }
+
+        if (TCKInput.GetAction("ActivateRain", EActionEvent.Click) && isClicked == true)
         {
             click.Play();
             ActivateRain.isEnable = false;

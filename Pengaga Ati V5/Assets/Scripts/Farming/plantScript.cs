@@ -14,6 +14,8 @@ namespace Examples
 
         public static bool seedPlanted = false;
 
+        public static bool seedPlantedForReal = false;
+
         public bool handIsPlanting = false;
 
         public AudioSource planted;
@@ -29,10 +31,11 @@ namespace Examples
             spawnEnemy = spawnenemy.GetComponent<SpawnEnemy>();*/
         }
 
-        private void OnTriggerEnter(Collider other)
+        public void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.tag == "Chillie SeedBag" && canPlant == true)
             {
+                seedPlantedForReal = true;
                 planted.Play();
                 seedPlanted = true;
                 Player.carryObject = false;
