@@ -15,6 +15,10 @@ namespace Examples
 
         public static bool delivered = false;
 
+        public GameObject ScorePlus;
+
+        private bool addOne = false;
+
         void Start()
         {
             ScoringSystem.theScore = 0;
@@ -28,17 +32,25 @@ namespace Examples
                 Time.timeScale = 0;
                 PlaySound();
             }
+
+            if(addOne == true)
+            {
+                ScoringSystem.theScore += 1;
+                addOne = false;
+            }
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.tag == "Plant")
             {
+                addOne = true;
                 Destroy(other.gameObject);
-                ScoringSystem.theScore += 1;
+                //ScoringSystem.theScore += 1;
                 deliveredSound.Play();
                 delivered = true;
                 Player.carryObject = false;
+                PlayScoreUI();
             }
         }
 
@@ -46,6 +58,12 @@ namespace Examples
         {
             winSound.Play();
             winSoundIsPlay = true;
+        }
+
+        void PlayScoreUI()
+        {
+            GameObject clone = (GameObject)Instantiate(ScorePlus, transform.position, Quaternion.identity);
+            Destroy(clone, 2.0f);
         }
     }
 }

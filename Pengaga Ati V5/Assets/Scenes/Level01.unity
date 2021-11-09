@@ -6488,6 +6488,8 @@ MonoBehaviour:
   winScreen: {fileID: 2078279538}
   winSound: {fileID: 1893024406}
   deliveredSound: {fileID: 1379651484}
+  ScorePlus: {fileID: 3723232100650474682, guid: 39d1b11b6ca4bda439e11640ef740929,
+    type: 3}
 --- !u!65 &310189929
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43587,7 +43589,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!82 &919132148769782334
 AudioSource:
   m_ObjectHideFlags: 0
@@ -43739,7 +43741,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!82 &919132148874108532
 AudioSource:
   m_ObjectHideFlags: 0
@@ -43958,7 +43960,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &919132149475181915
 GameObject:
   m_ObjectHideFlags: 0
@@ -44096,7 +44098,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!82 &919132149511761985
 AudioSource:
   m_ObjectHideFlags: 0

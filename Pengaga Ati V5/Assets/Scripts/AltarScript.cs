@@ -62,7 +62,7 @@ namespace Examples
                 //StartCoroutine(WaitBeforeDestroyUI());
                 bonusTimeUIBool = false;*/
                 GameObject clone = (GameObject)Instantiate(bonusTimeUI, transform.position, Quaternion.identity);
-                Destroy(clone, 1.0f);
+                Destroy(clone, 2.0f);
                 bonusTimeUIBool = false;
             }
         }
