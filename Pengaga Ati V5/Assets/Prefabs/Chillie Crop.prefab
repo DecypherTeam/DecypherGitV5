@@ -47,8 +47,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0278597, y: 3.2781205, z: 1.8280029}
-  m_Center: {x: -0.006682873, y: 1.6222973, z: -0.013256073}
+  m_Size: {x: 1.0458207, y: 3.2781205, z: 1.0799217}
+  m_Center: {x: -0.014475584, y: 1.6222973, z: -0.013246536}
 --- !u!54 &3361956409469570482
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -82,8 +82,7 @@ MonoBehaviour:
   maxSize: 1
   isMaxSize: 0
   crop: {fileID: 3361956409469570444}
-  cropRb: {fileID: 3361956409469570482}
-  theDest: {fileID: 0}
+  eatSound: {fileID: 0}
 --- !u!114 &6025439233651862190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +99,9 @@ MonoBehaviour:
   pickUpDest: {fileID: 0}
   pickupitem: {fileID: 0}
   isPickUp: 0
+  pickUp: {fileID: 0}
+  pickBtn: {fileID: 0}
+  unpickBtn: {fileID: 0}
 --- !u!135 &-242164883108105571
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -111,8 +113,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.9
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1 &4085571199162381369
 GameObject:
   m_ObjectHideFlags: 0
