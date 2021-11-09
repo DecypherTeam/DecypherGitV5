@@ -34,6 +34,8 @@ public class EnemyControllerTutorial : MonoBehaviour
 
         public static bool boarShot = false;
 
+        public static bool isGhost = false;
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -95,13 +97,14 @@ public class EnemyControllerTutorial : MonoBehaviour
 
     public IEnumerator WaitBeforeGhost()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         /*angelSound.Play();*/
         mesh.GetComponent<Renderer>().material = ghostMaterial;
         rb.useGravity = false;
         agent.baseOffset = 2f;
         agent.speed = 2f;
         this.gameObject.tag = "Ghost";
+            isGhost = true;
     }
 
     void OnCollisionEnter(Collision collision)
@@ -119,7 +122,7 @@ public class EnemyControllerTutorial : MonoBehaviour
 
     public IEnumerator WaitBeforeRevealGhost()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         StartCoroutine(WaitBeforeGhost());
     }
 
