@@ -7,8 +7,8 @@ namespace Examples
     public class AltarScript : MonoBehaviour
     {
         public static bool sacrificed = false;
-
         public static bool sacrificedForReal = false;
+        public static bool sacrificeForChicPick = false;
 
         public AudioSource bonusTime;
         public AudioSource chickenSacrificed;
@@ -25,6 +25,7 @@ namespace Examples
         {
             if (other.gameObject.tag == "NPC" && soundIsPlay == false)
             {
+                sacrificeForChicPick = true;
                 sacrificedForReal = true;
                 Destroy(other.gameObject);
                 Debug.Log("Chicken is sacrificed");

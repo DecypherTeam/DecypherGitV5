@@ -18737,7 +18737,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 991ee3be9dc1b514d99be78ca2d17c32,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 991ee3be9dc1b514d99be78ca2d17c32,
         type: 3}
@@ -19906,6 +19906,8 @@ MonoBehaviour:
   pickupitem: {fileID: 0}
   isPickUp: 0
   pickUp: {fileID: 0}
+  pickBtn: {fileID: 0}
+  unpickBtn: {fileID: 0}
 --- !u!114 &809001565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21765,7 +21767,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4ebcf1944659b7841b9d26fcb1f7ef8a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ebcf1944659b7841b9d26fcb1f7ef8a,
         type: 3}
@@ -22572,7 +22574,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 261327ede466f3e42aa1e964dfbded48,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 261327ede466f3e42aa1e964dfbded48,
         type: 3}
@@ -26541,7 +26543,7 @@ PrefabInstance:
     - target: {fileID: 9145892104289000100, guid: 2461318a5501b5e49b1855b238dbf70a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9145892104289000100, guid: 2461318a5501b5e49b1855b238dbf70a,
         type: 3}
@@ -27037,7 +27039,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e68721b761a29fa41af731ad910da5ac,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e68721b761a29fa41af731ad910da5ac,
         type: 3}
@@ -34597,8 +34599,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2439404, y: 0.68156266, z: 2.65172}
-  m_Center: {x: 0.033041954, y: -0.15921867, z: 0.03942585}
+  m_Size: {x: 1.2439404, y: 0.20083523, z: 2.65172}
+  m_Center: {x: 0.033041954, y: -0.5474833, z: 0.03942585}
 --- !u!4 &1867292696
 Transform:
   m_ObjectHideFlags: 0
@@ -35541,7 +35543,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4ebcf1944659b7841b9d26fcb1f7ef8a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4ebcf1944659b7841b9d26fcb1f7ef8a,
         type: 3}
@@ -35992,7 +35994,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 447592067b37cf744b4232a9b655f0aa,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 447592067b37cf744b4232a9b655f0aa,
         type: 3}
@@ -37582,7 +37584,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c6ddf0e5dd99dc44db3696dd372b2a80,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c6ddf0e5dd99dc44db3696dd372b2a80,
         type: 3}
@@ -38764,6 +38766,8 @@ MonoBehaviour:
   pickupitem: {fileID: 0}
   isPickUp: 0
   pickUp: {fileID: 0}
+  pickBtn: {fileID: 0}
+  unpickBtn: {fileID: 0}
 --- !u!135 &919132148769782333
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -38775,8 +38779,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!82 &919132148769782334
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38914,6 +38918,8 @@ MonoBehaviour:
   pickupitem: {fileID: 0}
   isPickUp: 0
   pickUp: {fileID: 0}
+  pickBtn: {fileID: 0}
+  unpickBtn: {fileID: 0}
 --- !u!135 &919132148874108531
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -38925,8 +38931,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!82 &919132148874108532
 AudioSource:
   m_ObjectHideFlags: 0
@@ -39131,6 +39137,8 @@ MonoBehaviour:
   pickupitem: {fileID: 0}
   isPickUp: 0
   pickUp: {fileID: 0}
+  pickBtn: {fileID: 0}
+  unpickBtn: {fileID: 0}
 --- !u!135 &919132149189046959
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -39142,8 +39150,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &919132149475181915
 GameObject:
   m_ObjectHideFlags: 0
@@ -39267,6 +39275,8 @@ MonoBehaviour:
   pickupitem: {fileID: 0}
   isPickUp: 0
   pickUp: {fileID: 0}
+  pickBtn: {fileID: 0}
+  unpickBtn: {fileID: 0}
 --- !u!135 &919132149511761984
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -39278,8 +39288,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!82 &919132149511761985
 AudioSource:
   m_ObjectHideFlags: 0

@@ -20,6 +20,9 @@ namespace Examples
 
         public AudioSource pickUp;
 
+        public TCKButton pickBtn;
+        public TCKButton unpickBtn;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -38,14 +41,18 @@ namespace Examples
 
             sc = gameObject.GetComponent<SphereCollider>();
             anim = player.GetComponent<Animator>();
-            sc.radius = 2.5f;
+            //sc.radius = 2.5f;
             isPickUp = false;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (TCKInput.GetAction("pickBtn", EActionEvent.Press))
+            pickBtn = GameObject.Find("pickBtn").GetComponent<TCKButton>();
+
+            unpickBtn = GameObject.Find("unpickBtn").GetComponent<TCKButton>();
+
+            if (TCKInput.GetAction("pickBtn", EActionEvent.Click))
             {
                 if (isPickUp)
                 {
@@ -58,10 +65,11 @@ namespace Examples
                     pickupitem.constraints = RigidbodyConstraints.FreezeAll;
                     isPickUp = false;
                     pickUp.Play();
+                    ActivateUnpickBtn();
                 }
             }
 
-            if (TCKInput.GetAction("pickBtn", EActionEvent.Up))
+            if (TCKInput.GetAction("unpickBtn", EActionEvent.Click))
             {
                 gameObject.GetComponent<NavMeshAgent>().enabled = true;
                 Player.carryObject = false;
@@ -69,7 +77,26 @@ namespace Examples
                 anim.SetBool("isPickup", false);
                 pickupitem.useGravity = true;
                 pickupitem.transform.parent = null;
+                ActivatePickBtn();
             }
+
+            /*if (AltarScript.sacrificeForChicPick == true)
+            {
+                anim.SetBool("isPickup", false);
+                AltarScript.sacrificeForChicPick = false;
+            }*/
+        }
+
+        void ActivateUnpickBtn()
+        {
+            pickBtn.isEnable = false;
+            unpickBtn.isEnable = true;
+        }
+
+        void ActivatePickBtn()
+        {
+            unpickBtn.isEnable = false;
+            pickBtn.isEnable = true;
         }
 
         private void OnTriggerStay(Collider other)
