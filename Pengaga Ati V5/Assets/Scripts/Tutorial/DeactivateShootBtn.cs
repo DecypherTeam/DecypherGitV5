@@ -4,44 +4,46 @@ using UnityEngine;
 using UnityEngine.UI;
 using TouchControlsKit;
 
-public class DeactivateShootBtn : MonoBehaviour
-{
-    public TCKButton ActivateWildBoar;
-    public TCKButton ActivateRain;
-    public TCKButton fireBtn;
-    public TCKButton plantSeedBtn;
-
-    public AudioSource click;
-
-    private bool isClicked = false;
-
-    // Start is called before the first frame update
-    void Start()
+namespace Examples {
+    public class DeactivateShootBtn : MonoBehaviour
     {
-        ActivateRain = GameObject.Find("ActivateRain").GetComponent<TCKButton>();
-        //ActivateRain.isEnable = true;
-        ActivateWildBoar = GameObject.Find("ActivateWildBoar").GetComponent<TCKButton>();
-        ActivateWildBoar.isEnable = false;
-        fireBtn = GameObject.Find("fireBtn").GetComponent<TCKButton>();
-        fireBtn.isEnable = false;
-        plantSeedBtn = GameObject.Find("plantSeedBtn").GetComponent<TCKButton>();
-    }
+        public TCKButton ActivateWildBoar;
+        public TCKButton ActivateRain;
+        public TCKButton fireBtn;
+        public TCKButton plantSeedBtn;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (TCKInput.GetAction("plantSeedBtn", EActionEvent.Press))
+        public AudioSource click;
+
+        //private bool isClicked = false;
+
+        // Start is called before the first frame update
+        void Start()
         {
-            isClicked = true;
+            ActivateRain = GameObject.Find("ActivateRain").GetComponent<TCKButton>();
+            //ActivateRain.isEnable = true;
+            ActivateWildBoar = GameObject.Find("ActivateWildBoar").GetComponent<TCKButton>();
+            ActivateWildBoar.isEnable = false;
+            fireBtn = GameObject.Find("fireBtn").GetComponent<TCKButton>();
+            fireBtn.isEnable = false;
+            plantSeedBtn = GameObject.Find("plantSeedBtn").GetComponent<TCKButton>();
         }
 
-        if (TCKInput.GetAction("ActivateRain", EActionEvent.Click) && isClicked == true)
+        // Update is called once per frame
+        void Update()
         {
-            click.Play();
-            ActivateRain.isEnable = false;
-            fireBtn.isEnable = true;
-            ActivateWildBoar.isEnable = true;
+            /*if (TCKInput.GetAction("plantSeedBtn", EActionEvent.Press))
+            {
+                isClicked = true;
+            }*/
+
+            if (TCKInput.GetAction("ActivateRain", EActionEvent.Click) && /*isClicked == true*/ Growth.isHarvested == true)
+            {
+                click.Play();
+                ActivateRain.isEnable = false;
+                fireBtn.isEnable = true;
+                ActivateWildBoar.isEnable = true;
+                Growth.isHarvested = false;
+            }
         }
     }
-
 }

@@ -33,7 +33,7 @@ namespace Examples
             }
             if (AltarScript.sacrificed == true)
             {
-                timeValue += 50;
+                timeValue += 40;
                 AltarScript.sacrificed = false;
             }
 

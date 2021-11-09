@@ -17,6 +17,7 @@ namespace Examples
         public AudioSource eatSound;
 
         public static bool plantEaten = false;
+        public static bool isHarvested = false;
 
         void Start()
         {
@@ -33,6 +34,7 @@ namespace Examples
             if (isMaxSize == true)
             {
                 crop.GetComponent<ObjectPickUp>().enabled = true;
+                isHarvested = true;
             }
 
             eatSound = GameObject.Find("BoarEatSound").GetComponent<AudioSource>();

@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
-  growTime: 1000
+  growTime: 600
   maxSize: 1
   isMaxSize: 0
   crop: {fileID: 3361956409469570444}
