@@ -45,6 +45,12 @@ namespace Examples
                 print("Plant is not fully grown");
                 plantIsGrown = false;
                 //plant.canPlant = true;
+
+                enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
+                if (enemyCheck.Length == 0)
+                {
+                    spawnEnemy.enemySpawn = true;
+                }
             }
         }
     }
