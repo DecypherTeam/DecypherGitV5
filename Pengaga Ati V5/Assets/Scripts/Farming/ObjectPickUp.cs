@@ -35,7 +35,8 @@ namespace Examples
 
             sc = gameObject.GetComponent<SphereCollider>();
             anim = player.GetComponent<Animator>();
-            sc.radius = 2.5f;
+            //sc.radius = 1f;
+            //sc.center = new Vector3 (0, 1.5f, 0);
             isPickUp = false;
         }
 
