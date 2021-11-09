@@ -16,15 +16,21 @@ namespace Examples
 
         ParticleSystem ps;
 
+        public GameObject bonusTimeUI;
+        private bool bonusTimeUIBool = false;
+
         void Update()
         {
             ps = GameObject.Find("Particle Sacrifice").GetComponent<ParticleSystem>();
+
+            PlayScoreUI();
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.tag == "NPC" && soundIsPlay == false)
             {
+                bonusTimeUIBool = true;
                 sacrificeForChicPick = true;
                 sacrificedForReal = true;
                 Destroy(other.gameObject);
@@ -46,6 +52,19 @@ namespace Examples
         void PlayParticles()
         {
             ps.Play();
+        }
+
+        void PlayScoreUI()
+        {
+            if (bonusTimeUIBool == true)
+            {
+                /*Instantiate(bonusTimeUI, transform.position, transform.rotation *= Quaternion.Euler(0, 90, 0));
+                //StartCoroutine(WaitBeforeDestroyUI());
+                bonusTimeUIBool = false;*/
+                GameObject clone = (GameObject)Instantiate(bonusTimeUI, transform.position, Quaternion.identity);
+                Destroy(clone, 1.0f);
+                bonusTimeUIBool = false;
+            }
         }
     }
 }

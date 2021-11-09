@@ -16,6 +16,8 @@ public class ScoringPointTut : MonoBehaviour
 
     public GameObject deliveredBtn;
 
+    public GameObject plusOne;
+
     void Update()
     {
         if (ScoringSystemTutorial.theScore == 1 && winSoundIsPlay == false)
@@ -31,6 +33,7 @@ public class ScoringPointTut : MonoBehaviour
     {
         if (other.gameObject.tag == "Plant")
         {
+                PlayScoreUI();
             Destroy(other.gameObject);
             ScoringSystemTutorial.theScore += 1;
             deliveredSound.Play();
@@ -44,5 +47,17 @@ public class ScoringPointTut : MonoBehaviour
         winSound.Play();
         winSoundIsPlay = true;
     }
+
+        void PlayScoreUI()
+        {
+            Instantiate(plusOne, transform.position, transform.rotation);
+            StartCoroutine(WaitBeforeDestroyUI());
+        }
+
+        IEnumerator WaitBeforeDestroyUI()
+        {
+            yield return new WaitForSeconds(2);
+            Destroy(plusOne);
+        }
 }
 }
