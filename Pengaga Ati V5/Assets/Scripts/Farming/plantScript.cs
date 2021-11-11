@@ -58,10 +58,10 @@ namespace Examples
             {
                 canPlant = false;
             }
-            else
+            /*else
             {
                 canPlant = true;
-            }
+            }*/
         }
 
         public void spawnplant()
