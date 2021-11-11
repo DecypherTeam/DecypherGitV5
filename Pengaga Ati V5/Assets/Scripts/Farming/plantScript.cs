@@ -42,6 +42,12 @@ namespace Examples
                 Destroy(other.gameObject);
                 spawnplant();
             }
+
+            if(other.gameObject.tag == "Enemy")
+            {
+                canPlant = true;
+                print("boar enter so canPlant is true");
+            }
         }
 
         private void OnTriggerExit(Collider other)
