@@ -27,6 +27,8 @@ namespace Examples
 
         public AudioSource shootSound;
 
+        //public GameObject crosshair;
+
         // Awake
         void Awake()
         {

@@ -24428,7 +24428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a62948e8d9e551a4bbfc545f5ae05c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeValue: 700
+  timeValue: 300
   timeText: {fileID: 1214651856}
   loseScreen: {fileID: 1483167291}
   loseSound: {fileID: 1191564190}
@@ -33211,7 +33211,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6598568f60fda4d43b1280f808803336, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a607367d4cd7698448f8136e61700697, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -37434,7 +37434,7 @@ SkinnedMeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135155795}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
