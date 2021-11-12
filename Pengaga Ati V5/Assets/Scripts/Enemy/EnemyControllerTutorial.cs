@@ -36,6 +36,8 @@ namespace Examples
 
         public static bool isGhost = false;
 
+        private int Count = 0;
+
         private void Start()
         {
             agent = GetComponent<NavMeshAgent>();
@@ -111,12 +113,16 @@ namespace Examples
         {
             if (collision.gameObject.name == "Sphere")
             {
-                boarShot = true;
-                animator.SetBool("isDead", true);
-                agent.speed = 0f;
-                deathSound.Play();
-                ps.Play();
-                StartCoroutine(WaitBeforeRevealGhost());
+                Count++;
+                if (Count <= 1)
+                {
+                    boarShot = true;
+                    animator.SetBool("isDead", true);
+                    agent.speed = 0f;
+                    deathSound.Play();
+                    ps.Play();
+                    StartCoroutine(WaitBeforeRevealGhost());
+                }
             }
         }
 
