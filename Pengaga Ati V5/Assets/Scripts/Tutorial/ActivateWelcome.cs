@@ -8,6 +8,9 @@ public class ActivateWelcome : MonoBehaviour
     public TCKButton WelcomeTutorial;
     public TCKButton ActivateTutorial;
 
+    public GameObject SkipButton;
+    public GameObject SkipButton2;
+
     public AudioSource click;
 
     // Start is called before the first frame update
@@ -27,6 +30,8 @@ public class ActivateWelcome : MonoBehaviour
             click.Play();
             WelcomeTutorial.isEnable = false;
             ActivateTutorial.isEnable = true;
+            SkipButton.SetActive(false);
+            SkipButton2.SetActive(true);
         }
     }
 
