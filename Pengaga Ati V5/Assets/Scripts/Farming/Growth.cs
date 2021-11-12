@@ -20,6 +20,10 @@ namespace Examples
         public static bool plantEaten = false;
         public static bool isHarvested = false;
 
+        public GameObject readyUI;
+
+        private int Count = 0;
+
         void Start()
         {
             crop.GetComponent<ObjectPickUp>().enabled = false;
@@ -38,6 +42,12 @@ namespace Examples
             {
                 crop.GetComponent<ObjectPickUp>().enabled = true;
                 isHarvested = true;
+
+                Count++;
+                if (Count <= 1)
+                {
+                    SpawnUI();
+                }
             }
 
             eatSound = GameObject.Find("BoarEatSound").GetComponent<AudioSource>();
@@ -72,6 +82,12 @@ namespace Examples
             {
                 cropRb.constraints = RigidbodyConstraints.FreezeAll;
             }
+        }
+
+        void SpawnUI()
+        {
+            Vector3 pos = new Vector3(0f, 5f, 0f);
+            Instantiate(readyUI, transform.position + pos, transform.rotation);
         }
 
     }

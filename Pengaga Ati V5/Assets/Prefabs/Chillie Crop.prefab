@@ -82,7 +82,9 @@ MonoBehaviour:
   maxSize: 1
   isMaxSize: 0
   crop: {fileID: 3361956409469570444}
+  cropRb: {fileID: 0}
   eatSound: {fileID: 0}
+  readyUI: {fileID: 803160132539790537, guid: 2b2a825d9e06ace41a6e756ad50e4d23, type: 3}
 --- !u!114 &6025439233651862190
 MonoBehaviour:
   m_ObjectHideFlags: 0
