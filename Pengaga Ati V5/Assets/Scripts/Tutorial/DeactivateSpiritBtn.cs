@@ -19,7 +19,7 @@ namespace Examples
         void Start()
         {
             ActivateWildBoar = GameObject.Find("ActivateWildBoar").GetComponent<TCKButton>();
-            //ActivateWildBoar.isEnable = true;
+            ActivateWildBoar.isEnable = false;
             ActivateSpirit = GameObject.Find("ActivateSpirit").GetComponent<TCKButton>();
             ActivateSpirit.isEnable = false;
             killSpiritBtn = GameObject.Find("killSpiritBtn").GetComponent<TCKButton>();

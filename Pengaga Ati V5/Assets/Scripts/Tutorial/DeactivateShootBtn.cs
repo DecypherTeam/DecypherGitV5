@@ -14,6 +14,8 @@ namespace Examples {
 
         public AudioSource click;
 
+        private int count = 0;
+
         //private bool isClicked = false;
 
         // Start is called before the first frame update
@@ -26,6 +28,7 @@ namespace Examples {
             fireBtn = GameObject.Find("fireBtn").GetComponent<TCKButton>();
             fireBtn.isEnable = false;
             plantSeedBtn = GameObject.Find("plantSeedBtn").GetComponent<TCKButton>();
+            plantSeedBtn.isEnable = false;
         }
 
         // Update is called once per frame
@@ -38,12 +41,16 @@ namespace Examples {
 
             if (/*TCKInput.GetAction("ActivateRain", EActionEvent.Click) && isClicked == true*/ Growth.isHarvested == true)
             {
-                click.Play();
-                ActivateRain.isEnable = false;
-                fireBtn.isEnable = true;
-                ActivateWildBoar.isEnable = true;
-                Growth.isHarvested = false;
-                Destroy(this);
+                count++;
+                if (count <= 1)
+                {
+                    click.Play();
+                    ActivateRain.isEnable = false;
+                    fireBtn.isEnable = true;
+                    ActivateWildBoar.isEnable = true;
+                    Growth.isHarvested = false;
+                    Destroy(this);
+                }
             }
         }
     }

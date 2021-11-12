@@ -107,6 +107,7 @@ namespace Examples
             agent.speed = 2f;
             this.gameObject.tag = "Ghost";
             isGhost = true;
+            boarShot = true;
         }
 
         void OnCollisionEnter(Collision collision)
@@ -116,7 +117,7 @@ namespace Examples
                 Count++;
                 if (Count <= 1)
                 {
-                    boarShot = true;
+                    //boarShot = true;
                     animator.SetBool("isDead", true);
                     agent.speed = 0f;
                     deathSound.Play();
