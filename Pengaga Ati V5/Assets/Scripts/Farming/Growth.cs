@@ -13,6 +13,7 @@ namespace Examples
         public bool isMaxSize = false;
 
         public GameObject crop;
+        public Rigidbody cropRb;
 
         public AudioSource eatSound;
 
@@ -26,6 +27,8 @@ namespace Examples
 
         void Update()
         {
+            cropRb = GetComponent<Rigidbody>();
+
             if (isMaxSize == false && EndPos.handInPosition == true)
             {
                 StartCoroutine(Grow());
@@ -63,6 +66,11 @@ namespace Examples
                 eatSound.Play();
                 Destroy(crop);
                 plantEaten = true;
+            }
+
+            if (other.collider.tag == "Plant" || other.collider.tag == "Chillie Seedbag" || other.gameObject.name == "Sphere")
+            {
+                cropRb.constraints = RigidbodyConstraints.FreezeAll;
             }
         }
 
