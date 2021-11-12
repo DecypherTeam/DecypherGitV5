@@ -7,7 +7,8 @@ namespace Examples {
     public class ActivatePickchic : MonoBehaviour
     {
         public TCKButton ActivateSpirit;
-        public TCKButton ActivateTimer;
+        //public TCKButton ActivateTimer;
+        public TCKButton ActivateSacrifice;
 
         public AudioSource click;
 
@@ -20,9 +21,12 @@ namespace Examples {
         {
             ActivateSpirit = GameObject.Find("ActivateSpirit").GetComponent<TCKButton>();
             //ActivateSpirit.isEnable = true;
-            ActivateTimer = GameObject.Find("ActivateTimer").GetComponent<TCKButton>();
-            ActivateTimer.isEnable = false;
+            //ActivateTimer = GameObject.Find("ActivateTimer").GetComponent<TCKButton>();
+            //ActivateTimer.isEnable = false;
             killSpiritBtn = GameObject.Find("killSpiritBtn").GetComponent<TCKButton>();
+
+            ActivateSacrifice = GameObject.Find("ActivateSacrifice").GetComponent<TCKButton>();
+            ActivateSacrifice.isEnable = false;
         }
 
         void Update()
@@ -37,7 +41,8 @@ namespace Examples {
             {
                 click.Play();
                 ActivateSpirit.isEnable = false;
-                ActivateTimer.isEnable = true;
+                //ActivateTimer.isEnable = true;
+                ActivateSacrifice.isEnable = true;
                 isClicked = false;
                 EnemyControllerTutorial.isGhost = false;
             }

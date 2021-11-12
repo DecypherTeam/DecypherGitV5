@@ -36,13 +36,14 @@ namespace Examples {
                 isClicked = true;
             }*/
 
-            if (TCKInput.GetAction("ActivateRain", EActionEvent.Click) && /*isClicked == true*/ Growth.isHarvested == true)
+            if (/*TCKInput.GetAction("ActivateRain", EActionEvent.Click) && isClicked == true*/ Growth.isHarvested == true)
             {
                 click.Play();
                 ActivateRain.isEnable = false;
                 fireBtn.isEnable = true;
                 ActivateWildBoar.isEnable = true;
                 Growth.isHarvested = false;
+                Destroy(this);
             }
         }
     }

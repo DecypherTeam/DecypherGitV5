@@ -20,14 +20,14 @@ namespace Examples
             //ActivateSacrifice.isEnable = true;
             ActivateDelivery = GameObject.Find("ActivateDelivery").GetComponent<TCKButton>();
             ActivateDelivery.isEnable = false;
-            ActivateTimer = GameObject.Find("ActivateTimer").GetComponent<TCKButton>();
-            ActivateTimer.isEnable = false;
+            /*ActivateTimer = GameObject.Find("ActivateTimer").GetComponent<TCKButton>();
+            ActivateTimer.isEnable = false;*/
         }
 
         void Update()
         {
             //the dialogue box for the specific button setActive is equal to true)
-            if (TCKInput.GetAction("ActivateSacrifice", EActionEvent.Click) && AltarScript.sacrificedForReal == true)
+            if (AltarScript.sacrificedForReal == true)
             {
                 click.Play();
                 ActivateSacrifice.isEnable = false;

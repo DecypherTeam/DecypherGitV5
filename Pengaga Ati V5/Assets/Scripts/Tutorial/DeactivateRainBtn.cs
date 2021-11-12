@@ -29,12 +29,13 @@ namespace Examples
         // Update is called once per frame
         void Update()
         {
-            if (TCKInput.GetAction("ActivatePlant", EActionEvent.Click) && plantScript.seedPlantedForReal == true)
+            if (/*TCKInput.GetAction("ActivatePlant", EActionEvent.Click) &&*/ plantScript.seedPlantedForReal == true)
             {
                 click.Play();
                 ActivatePlant.isEnable = false;
                 ActivateRain.isEnable = true;
                 plantSeedBtn.isEnable = true;
+                plantScript.seedPlantedForReal = false;
             }
         }
 

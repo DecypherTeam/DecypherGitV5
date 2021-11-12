@@ -30,13 +30,14 @@ namespace Examples
         void Update()
         {
             //the dialogue box for the specific button setActive is equal to true)
-            if (TCKInput.GetAction("ActivateWildBoar", EActionEvent.Click) && EnemyControllerTutorial.boarShot == true)
+            if (/*TCKInput.GetAction("ActivateWildBoar", EActionEvent.Click) && */EnemyControllerTutorial.boarShot == true)
             {
                 click.Play();
                 ActivateWildBoar.isEnable = false;
                 ActivateTutorial.isEnable = false;
                 killSpiritBtn.isEnable = true;
                 ActivateSpirit.isEnable = true;
+                EnemyControllerTutorial.boarShot = false;
             }
         }
     }

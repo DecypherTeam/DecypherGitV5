@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Examples {
-
-public class EnemyControllerTutorial : MonoBehaviour
+namespace Examples 
 {
-    NavMeshAgent agent;
+    public class EnemyControllerTutorial : MonoBehaviour
+    {
+        NavMeshAgent agent;
 
-    GameObject target;
+        GameObject target;
 
-    Animator animator;
+        Animator animator;
 
-    Rigidbody rb;
+        Rigidbody rb;
 
-    public GameObject mesh;
-    public Material ghostMaterial;
+        public GameObject mesh;
+        public Material ghostMaterial;
 
-    //SpawnEnemy spawnEnemy;
+        //SpawnEnemy spawnEnemy;
 
-    public static bool destroy = false;
+        public static bool destroy = false;
 
-    ParticleSystem ps;
+        ParticleSystem ps;
 
-    public AudioSource deathSound;
+        public AudioSource deathSound;
 
         /*public AudioSource angelSound;*/
 
@@ -36,101 +36,101 @@ public class EnemyControllerTutorial : MonoBehaviour
 
         public static bool isGhost = false;
 
-    private void Start()
-    {
-        agent = GetComponent<NavMeshAgent>();
-
-        animator = GetComponent<Animator>();
-
-        rb = GetComponent<Rigidbody>();
-
-        /*GameObject spawnenemy = GameObject.Find("SpawnEnemy");
-        spawnEnemy = spawnenemy.GetComponent<SpawnEnemy>();*/
-    }
-
-    private void Update()
-    {
-        target = GameObject.FindGameObjectWithTag("Plant");
-
-        if (target && GrownCheckTutorial.plantIsGrown == true)
+        private void Start()
         {
-            GoToTarget();
-        }
-        else
-        {
-            StopEnemy();
+            agent = GetComponent<NavMeshAgent>();
+
+            animator = GetComponent<Animator>();
+
+            rb = GetComponent<Rigidbody>();
+
+            /*GameObject spawnenemy = GameObject.Find("SpawnEnemy");
+            spawnEnemy = spawnenemy.GetComponent<SpawnEnemy>();*/
         }
 
-        if (destroy == true)
+        private void Update()
         {
-            StartCoroutine(DestroyEnemy());
-            destroy = false;
-        }
+            target = GameObject.FindGameObjectWithTag("Plant");
 
-        /*if(playsound == true)
+            if (target && GrownCheckTutorial.plantIsGrown == true)
+            {
+                GoToTarget();
+            }
+            else
+            {
+                StopEnemy();
+            }
+
+            if (destroy == true)
+            {
+                StartCoroutine(DestroyEnemy());
+                destroy = false;
+            }
+
+            /*if(playsound == true)
             {
                 enemyComing.Play();
                 playsound = false;
             }*/
 
-        ps = GameObject.Find("Particle Spirit").GetComponent<ParticleSystem>();
-        ps.transform.position = transform.position;
+            ps = GameObject.Find("Particle Spirit").GetComponent<ParticleSystem>();
+            ps.transform.position = transform.position;
 
-        deathSound = GameObject.Find("BoarDeadSound").GetComponent<AudioSource>();
+            deathSound = GameObject.Find("BoarDeadSound").GetComponent<AudioSource>();
 
-        /*angelSound = GameObject.Find("Angel Choir").GetComponent<AudioSource>();*/
-    }
-
-    private void GoToTarget()
-    {
-        animator.SetBool("isRunning", true);
-        agent.isStopped = false;
-        agent.SetDestination(target.transform.position);
-            playsound = true;
+            /*angelSound = GameObject.Find("Angel Choir").GetComponent<AudioSource>();*/
         }
 
-    private void StopEnemy()
-    {
-        animator.SetBool("isRunning", false);
-        agent.isStopped = true;
-    }
-
-    public IEnumerator WaitBeforeGhost()
-    {
-        yield return new WaitForSeconds(1);
-        /*angelSound.Play();*/
-        mesh.GetComponent<Renderer>().material = ghostMaterial;
-        rb.useGravity = false;
-        agent.baseOffset = 2f;
-        agent.speed = 2f;
-        this.gameObject.tag = "Ghost";
-            isGhost = true;
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "Sphere")
+        private void GoToTarget()
         {
-            boarShot = true;
-            animator.SetBool("isDead", true);
-            agent.speed = 0f;
-            deathSound.Play();
-            ps.Play();
-            StartCoroutine(WaitBeforeRevealGhost());
+            animator.SetBool("isRunning", true);
+            agent.isStopped = false;
+            agent.SetDestination(target.transform.position);
+            //playsound = true;
+        }
+
+        private void StopEnemy()
+        {
+            animator.SetBool("isRunning", false);
+            agent.isStopped = true;
+        }
+
+        public IEnumerator WaitBeforeGhost()
+        {
+            yield return new WaitForSeconds(1);
+            /*angelSound.Play();*/
+            mesh.GetComponent<Renderer>().material = ghostMaterial;
+            rb.useGravity = false;
+            agent.baseOffset = 2f;
+            agent.speed = 2f;
+            this.gameObject.tag = "Ghost";
+            isGhost = true;
+        }
+
+        void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.name == "Sphere")
+            {
+                boarShot = true;
+                animator.SetBool("isDead", true);
+                agent.speed = 0f;
+                deathSound.Play();
+                ps.Play();
+                StartCoroutine(WaitBeforeRevealGhost());
+            }
+        }
+
+        public IEnumerator WaitBeforeRevealGhost()
+        {
+            yield return new WaitForSeconds(1);
+            StartCoroutine(WaitBeforeGhost());
+        }
+
+        public IEnumerator DestroyEnemy()
+        {
+            yield return new WaitForSeconds(1);
+            enemyComing.Pause();
+            Destroy(gameObject);
         }
     }
-
-    public IEnumerator WaitBeforeRevealGhost()
-    {
-        yield return new WaitForSeconds(1);
-        StartCoroutine(WaitBeforeGhost());
-    }
-
-    public IEnumerator DestroyEnemy()
-    {
-        yield return new WaitForSeconds(1);
-            enemyComing.Pause();
-        Destroy(gameObject);
-    }
-}
 }

@@ -64,5 +64,12 @@ namespace Examples
         {
             Application.Quit();
         }
+
+        public void SkipTutorial(int sceneID)
+        {
+            click.Play();
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(sceneID);
+        }
     }
 }

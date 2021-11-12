@@ -8,7 +8,8 @@ public class ActivateJoy : MonoBehaviour
     public TCKButton ActivateJoystick;
     public TCKButton pickBtn;
     public TCKButton unpickBtn;
-    public TCKButton ActivatePickup;
+    public TCKButton ActivateSeed;
+    public TCKButton spawnSeedBtn;
 
     public AudioSource click;
 
@@ -21,9 +22,10 @@ public class ActivateJoy : MonoBehaviour
         pickBtn.isEnable = false;
         unpickBtn = GameObject.Find("unpickBtn").GetComponent<TCKButton>();
         unpickBtn.isEnable = false;
-        ActivatePickup = GameObject.Find("ActivatePickup").GetComponent<TCKButton>();
-        ActivatePickup.isEnable = false;
-
+        ActivateSeed = GameObject.Find("ActivateSeed").GetComponent<TCKButton>();
+        ActivateSeed.isEnable = false;
+        spawnSeedBtn = GameObject.Find("spawnSeedBtn").GetComponent<TCKButton>();
+        spawnSeedBtn.isEnable = false;
     }
 
     // Update is called once per frame
@@ -33,9 +35,10 @@ public class ActivateJoy : MonoBehaviour
         {
             click.Play();
             ActivateJoystick.isEnable = false;
-            pickBtn.isEnable = true;
-            unpickBtn.isEnable = true;
-            ActivatePickup.isEnable = true;
+            //pickBtn.isEnable = true;
+            spawnSeedBtn.isEnable = true;
+            //unpickBtn.isEnable = true;
+            ActivateSeed.isEnable = true;
         }
     }
 

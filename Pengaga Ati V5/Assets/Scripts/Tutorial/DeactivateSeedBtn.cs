@@ -9,6 +9,8 @@ public class DeactivateSeedBtn : MonoBehaviour
     public TCKButton ActivateSeed;
     public TCKButton ActivatePlant;
     public TCKButton spawnSeedBtn;
+    public TCKButton pickBtn;
+    public TCKButton unpickBtn;
 
     public AudioSource click;
 
@@ -22,6 +24,10 @@ public class DeactivateSeedBtn : MonoBehaviour
         ActivatePlant = GameObject.Find("ActivatePlant").GetComponent<TCKButton>();
         ActivatePlant.isEnable = false;
         spawnSeedBtn = GameObject.Find("spawnSeedBtn").GetComponent<TCKButton>();
+        pickBtn = GameObject.Find("pickBtn").GetComponent<TCKButton>();
+        pickBtn.isEnable = false;
+        unpickBtn = GameObject.Find("unpickBtn").GetComponent<TCKButton>();
+        unpickBtn.isEnable = false;
     }
 
     // Update is called once per frame
@@ -32,12 +38,14 @@ public class DeactivateSeedBtn : MonoBehaviour
             buttonClicked = true;
         }
 
-        if (TCKInput.GetAction("ActivateSeed", EActionEvent.Click) && buttonClicked == true)
+        if (/*TCKInput.GetAction("ActivateSeed", EActionEvent.Click) &&*/ buttonClicked == true)
         {
             click.Play();
+            pickBtn.isEnable = true;
+            unpickBtn.isEnable = true;
             ActivateSeed.isEnable = false;
             ActivatePlant.isEnable = true;
+            buttonClicked = false;
         }
     }
-
 }
