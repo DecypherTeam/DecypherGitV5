@@ -7,6 +7,7 @@ public class ActivateWelcome : MonoBehaviour
 {
     public TCKButton WelcomeTutorial;
     public TCKButton ActivateTutorial;
+    public TCKButton ActivateWildBoar;
 
     public GameObject SkipButton;
     public GameObject SkipButton2;
@@ -20,6 +21,9 @@ public class ActivateWelcome : MonoBehaviour
         WelcomeTutorial.isEnable = true;
         ActivateTutorial = GameObject.Find("ActivateTutorial").GetComponent<TCKButton>();
         ActivateTutorial.isEnable = false;
+
+        ActivateWildBoar = GameObject.Find("ActivateWildBoar").GetComponent<TCKButton>();
+        ActivateWildBoar.isEnable = false;
     }
 
     // Update is called once per frame
