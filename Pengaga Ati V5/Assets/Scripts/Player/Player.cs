@@ -59,7 +59,7 @@ namespace Examples
             {
                 PlayerFiring();
                 animator.SetBool("isShooting", true);
-                secondCamera.gameObject.SetActive(true);
+                //secondCamera.gameObject.SetActive(true);
                 sumpit.gameObject.SetActive(true);
                 playerShoot = true;
             }
@@ -160,6 +160,7 @@ namespace Examples
             primitive.transform.localScale = Vector3.one * .2f;
             Rigidbody rBody = primitive.AddComponent<Rigidbody>();
             Transform camTransform = secondCamera.transform;
+            //Transform camTransform = cameraTransform;
             rBody.AddForce( camTransform.forward * range, ForceMode.Impulse );
             Destroy( primitive, 0.5f );
             shootSound.Play();
