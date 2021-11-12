@@ -17,6 +17,8 @@ namespace Examples
 
         public AudioSource eatSound;
 
+        public AudioSource chillieReady;
+
         public static bool plantEaten = false;
         public static bool isHarvested = false;
 
@@ -31,6 +33,8 @@ namespace Examples
 
         void Update()
         {
+            chillieReady = GameObject.Find("ChillieReadySound").GetComponent<AudioSource>();
+
             cropRb = GetComponent<Rigidbody>();
 
             if (isMaxSize == false && EndPos.handInPosition == true)
@@ -86,10 +90,18 @@ namespace Examples
 
         void SpawnUI()
         {
-            Vector3 pos = new Vector3(0f, 5f, 0f);
-            Instantiate(readyUI, transform.position + pos, transform.rotation);
+            StartCoroutine(WaitBeforeDisable());
         }
 
+        IEnumerator WaitBeforeDisable()
+        {
+            chillieReady.Play();
+            Vector3 pos = new Vector3(0f, 5f, 0f);
+            GameObject clone = (GameObject)Instantiate(readyUI, transform.position + pos, transform.rotation);
+            clone.SetActive(true);
+            yield return new WaitForSeconds(4);
+            clone.SetActive(false);
+        }
     }
 }
 
