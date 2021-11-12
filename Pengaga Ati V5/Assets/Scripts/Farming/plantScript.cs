@@ -20,7 +20,7 @@ namespace Examples
 
         public AudioSource planted;
 
-        public bool canPlant = true;
+        [SerializeField] private bool canPlant = true;
 
         private GameObject[] checkPlant;
 
@@ -29,6 +29,16 @@ namespace Examples
         {
             /*GameObject spawnenemy = GameObject.Find("SpawnEnemy");
             spawnEnemy = spawnenemy.GetComponent<SpawnEnemy>();*/
+        }
+
+        void Update()
+        {
+            /*if(Growth.plantEaten == true)
+            {
+                canPlant = true;
+                print("can plant is true");
+                Growth.plantEaten = false;
+            }*/
         }
 
         public void OnTriggerEnter(Collider other)
@@ -43,7 +53,7 @@ namespace Examples
                 spawnplant();
             }
 
-            if(other.gameObject.tag == "Enemy")
+            if(other.gameObject.tag == "Enemy" || other.gameObject.tag == "Ghost")
             {
                 canPlant = true;
                 print("boar enter so canPlant is true");
@@ -56,6 +66,12 @@ namespace Examples
             {
                 canPlant = true;
             }
+
+            /*if (other.gameObject.tag == "Enemy")
+            {
+                canPlant = true;
+                print("boar exit so canPlant is true");
+            }*/
         }
 
         private void OnTriggerStay(Collider other)
@@ -64,10 +80,14 @@ namespace Examples
             {
                 canPlant = false;
             }
-            /*else
+            else if (/*other.gameObject.tag == "Plant" &&*/ other.gameObject.tag == "Chillie SeedBag")
+            {
+                canPlant = false;
+            }
+            else
             {
                 canPlant = true;
-            }*/
+            }
         }
 
         public void spawnplant()
