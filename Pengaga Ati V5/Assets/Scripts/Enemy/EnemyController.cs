@@ -28,6 +28,8 @@ namespace Examples
 
         /*public AudioSource angelSound;*/
 
+        private int Count = 0;
+
         private void Start()
         {
             agent = GetComponent<NavMeshAgent>();
@@ -95,11 +97,15 @@ namespace Examples
         {
             if (collision.gameObject.name == "Sphere")
             {
-                animator.SetBool("isDead", true);
-                agent.speed = 0f;
-                deathSound.Play();
-                ps.Play();
-                StartCoroutine(WaitBeforeRevealGhost());
+                Count++;
+                if (Count <= 1)
+                {
+                    animator.SetBool("isDead", true);
+                    agent.speed = 0f;
+                    deathSound.Play();
+                    ps.Play();
+                    StartCoroutine(WaitBeforeRevealGhost());
+                }
             }
         }
 
