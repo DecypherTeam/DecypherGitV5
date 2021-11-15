@@ -14,7 +14,7 @@ public class OffScreenIndicator : MonoBehaviour
     [Tooltip("Distance offset of the indicators from the centre of the screen")]
     [SerializeField] private float screenBoundOffset = 0.9f;
 
-    public Camera mainCamera;
+    private Camera mainCamera;
     private Vector3 screenCentre;
     private Vector3 screenBounds;
 
@@ -25,6 +25,7 @@ public class OffScreenIndicator : MonoBehaviour
     void Awake()
     {
         //mainCamera = Camera.main;
+        mainCamera = GameObject.Find("_guiCamera").GetComponent<Camera>();
         screenCentre = new Vector3(Screen.width, Screen.height, 0) / 2;
         screenBounds = screenCentre * screenBoundOffset;
         TargetStateChanged += HandleTargetStateChanged;
