@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using TouchControlsKit;
 namespace Examples
 {
@@ -57,17 +59,19 @@ namespace Examples
             // Assigning the shooting mechanics to the shooting button
             if ( TCKInput.GetAction( "fireBtn", EActionEvent.Press ) && carryObject == false)
             {
-                PlayerFiring();
+                //PlayerFiring();
+                StartCoroutine(FireDelay());
                 animator.SetBool("isShooting", true);
                 //secondCamera.gameObject.SetActive(true);
-                sumpit.gameObject.SetActive(true);
+                sumpit.SetActive(true);
                 playerShoot = true;
                 crosshair.SetActive(true);
             }
             else
             {
+                weapReady = false;
                 animator.SetBool("isShooting", false);
-                sumpit.gameObject.SetActive(false);
+                sumpit.SetActive(false);
                 playerShoot = false;
                 crosshair.SetActive(false);
             }
@@ -164,6 +168,12 @@ namespace Examples
             rBody.AddForce( camTransform.forward * range, ForceMode.Impulse );
             Destroy( primitive, 0.5f );
             shootSound.Play();
+        }
+
+        public IEnumerator FireDelay()
+        {
+            yield return new WaitForSeconds(1);
+            PlayerFiring();
         }
 
         // PlayerClicked
