@@ -29,7 +29,8 @@ namespace Examples
 
         //public GameObject crosshair;
 
-        // Awake
+        public GameObject followPlayer;
+
         void Awake()
         {
             myTransform = transform;
@@ -42,7 +43,6 @@ namespace Examples
             animator = GetComponent<Animator>();
         }
 
-        // Update
         void Update()
         {
             // Setting up the shooting mechanics
@@ -77,7 +77,6 @@ namespace Examples
             PlayerRotation( look.x, look.y );
         }
 
-        // FixedUpdate
         void FixedUpdate()
         {
             // Assign the movement of the character to a joystick
@@ -85,14 +84,12 @@ namespace Examples
             PlayerMovement(move.x, move.y);
         }
 
-
         // Jumping
         private void Jumping()
         {
             if( controller.isGrounded )
                 jump = true;
         }
-
                         
         // PlayerMovement
         private void PlayerMovement( float horizontal, float vertical )
@@ -146,6 +143,7 @@ namespace Examples
             rotation += vertical * 12f;
             rotation = Mathf.Clamp( rotation, -60f, 60f );
             cameraTransform.localEulerAngles = new Vector3(9.61f, cameraTransform.localEulerAngles.y, 0f );
+            //cameraTransform.localEulerAngles = new Vector3(-rotation, cameraTransform.localEulerAngles.y, 0f);
         }
 
         // PlayerFiring
