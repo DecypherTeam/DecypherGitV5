@@ -27,9 +27,7 @@ namespace Examples
 
         public AudioSource shootSound;
 
-        //public GameObject crosshair;
-
-        public GameObject followPlayer;
+        public GameObject crosshair;
 
         void Awake()
         {
@@ -64,12 +62,14 @@ namespace Examples
                 //secondCamera.gameObject.SetActive(true);
                 sumpit.gameObject.SetActive(true);
                 playerShoot = true;
+                crosshair.SetActive(true);
             }
             else
             {
                 animator.SetBool("isShooting", false);
                 sumpit.gameObject.SetActive(false);
                 playerShoot = false;
+                crosshair.SetActive(false);
             }
 
             // Navigating the camera angles according to the player's touch on the touchpad area of the screen
