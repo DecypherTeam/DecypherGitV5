@@ -24,8 +24,8 @@ public class OffScreenIndicator : MonoBehaviour
 
     void Awake()
     {
-        //mainCamera = Camera.main;
-        mainCamera = GameObject.Find("_guiCamera").GetComponent<Camera>();
+        mainCamera = Camera.main;
+        //mainCamera = GameObject.Find("_guiCamera").GetComponent<Camera>();
         screenCentre = new Vector3(Screen.width, Screen.height, 0) / 2;
         screenBounds = screenCentre * screenBoundOffset;
         TargetStateChanged += HandleTargetStateChanged;
