@@ -33768,6 +33768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenBoundOffset: 0.9
+  mainCamera: {fileID: 0}
 --- !u!114 &1637599773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43214,6 +43215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenBoundOffset: 0.9
+  mainCamera: {fileID: 3308325049578948973}
 --- !u!114 &3308325049753966820
 MonoBehaviour:
   m_ObjectHideFlags: 0
