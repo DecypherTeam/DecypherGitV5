@@ -22,6 +22,7 @@ namespace Examples
         SpawnEnemy spawnEnemy;
 
         public static bool destroy = false;
+        public static bool goHome = false;
 
         ParticleSystem ps;
 
@@ -76,6 +77,7 @@ namespace Examples
             animator.SetBool("isRunning", true);
             agent.isStopped = false;
             agent.SetDestination(target.transform.position);
+            goHome = false;
         }
 
         private void StopEnemy()
@@ -84,6 +86,7 @@ namespace Examples
             agent.isStopped = true;*/
             animator.SetBool("isRunning", true);
             agent.SetDestination(cave.transform.position);
+            goHome = true;
         }
 
         public IEnumerator WaitBeforeGhost()

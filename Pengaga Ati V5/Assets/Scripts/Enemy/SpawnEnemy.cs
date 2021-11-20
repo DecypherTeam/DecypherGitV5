@@ -18,6 +18,8 @@ namespace Examples
         public GameObject[] ghostCheck;
         private bool playMusic = false;
 
+        private int count = 0;
+
         void Update()
         {
             SpawnEnemies();
@@ -26,7 +28,7 @@ namespace Examples
 
             enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
             ghostCheck = GameObject.FindGameObjectsWithTag("Ghost");
-            if (enemyCheck.Length == 0 && ghostCheck.Length == 0)
+            if (enemyCheck.Length == 0 && ghostCheck.Length == 0 || EnemyController.goHome == true)
             {
                 boarComingSound.Pause();
             }
@@ -40,6 +42,11 @@ namespace Examples
                 Instantiate(enemy, transform.position, transform.rotation);
                 enemySpawn = false;
             }
+
+            if(EnemyController.goHome == false)
+            {
+                PlayMusic();
+            }
         }
 
         void PlayMusic()
@@ -47,6 +54,7 @@ namespace Examples
             if (playMusic == true)
             {
                 boarComingSound.Play();
+                playMusic = false;
             } 
         }
     }
