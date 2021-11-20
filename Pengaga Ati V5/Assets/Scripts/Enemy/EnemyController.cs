@@ -10,6 +10,7 @@ namespace Examples
         NavMeshAgent agent;
 
         GameObject target;
+        GameObject cave;
 
         Animator animator;
 
@@ -45,6 +46,7 @@ namespace Examples
         private void Update()
         {
             target = GameObject.FindGameObjectWithTag("Plant");
+            cave = GameObject.Find("CaveTarget");
 
             if(target)
             {
@@ -78,8 +80,10 @@ namespace Examples
 
         private void StopEnemy()
         {
-            animator.SetBool("isRunning", false);
-            agent.isStopped = true;
+            /*animator.SetBool("isRunning", false);
+            agent.isStopped = true;*/
+            animator.SetBool("isRunning", true);
+            agent.SetDestination(cave.transform.position);
         }
 
         public IEnumerator WaitBeforeGhost()
