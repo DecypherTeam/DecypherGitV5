@@ -8,6 +8,7 @@ namespace Examples
     {
         bool binded;
         Transform myTransform, cameraTransform;
+        public Transform cameraTarget;
         CharacterController controller;
         float rotation;
         bool jump, prevGrounded;
@@ -146,7 +147,8 @@ namespace Examples
             myTransform.Rotate( 0f, horizontal * 9f, 0f );
             rotation += vertical * 12f;
             rotation = Mathf.Clamp( rotation, -60f, 60f );
-            cameraTransform.localEulerAngles = new Vector3(9.61f, cameraTransform.localEulerAngles.y, 0f );
+            //cameraTransform.localEulerAngles = new Vector3(9.61f, cameraTransform.localEulerAngles.y, 0f );
+            cameraTarget.localEulerAngles = new Vector3(-rotation, cameraTarget.localEulerAngles.y, 0f);
             //cameraTransform.localEulerAngles = new Vector3(-rotation, cameraTransform.localEulerAngles.y, 0f);
         }
 
