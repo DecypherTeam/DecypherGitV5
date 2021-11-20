@@ -33,8 +33,9 @@ namespace Examples
         private bool playsound = false;
 
         public static bool boarShot = false;
-
         public static bool isGhost = false;
+        public static bool boarOut = false;
+        public static bool boarDie = false;
 
         private int Count = 0;
 
@@ -57,6 +58,7 @@ namespace Examples
             if (target && GrownCheckTutorial.plantIsGrown == true)
             {
                 GoToTarget();
+                boarOut = true;
             }
             else
             {
@@ -67,6 +69,7 @@ namespace Examples
             {
                 StartCoroutine(DestroyEnemy());
                 destroy = false;
+                boarDie = true;
             }
 
             /*if(playsound == true)
