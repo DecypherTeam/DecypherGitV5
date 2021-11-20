@@ -20,6 +20,8 @@ namespace Examples
         public TCKButton pickBtn;
         public TCKButton unpickBtn;
 
+        public GameObject mesh;
+
         void Start()
         {
             // Get components inside the script so we won't have to manually place them in inside the inspector [START]
@@ -50,6 +52,7 @@ namespace Examples
                 if (isPickUp)
                 {
                     Player.carryObject = true;
+                    mesh.GetComponent<Renderer>().material.color = Color.white;
                     anim.SetBool("isPickup", true);
                     transform.position = pickUpDest.position;
                     pickupitem.useGravity = false;
@@ -95,12 +98,20 @@ namespace Examples
         private void OnTriggerStay(Collider other)
         {
             togglePickUp(other);
+            if (other.gameObject.tag == "Player" && Player.carryObject == false)
+            {
+                mesh.GetComponent<Renderer>().material.color = Color.red;
+            }
         }
 
         private void OnTriggerExit(Collider other)
         {
             /*togglePickUp(other);*/
             isPickUp = false;
+            if (other.gameObject.tag == "Player")
+            {
+                mesh.GetComponent<Renderer>().material.color = Color.white;
+            }
         }
 
         private void togglePickUp(Collider other)

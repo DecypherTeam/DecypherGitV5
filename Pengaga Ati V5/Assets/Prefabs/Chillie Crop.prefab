@@ -84,6 +84,7 @@ MonoBehaviour:
   crop: {fileID: 3361956409469570444}
   cropRb: {fileID: 0}
   eatSound: {fileID: 0}
+  chillieReady: {fileID: 0}
   readyUI: {fileID: 803160132539790537, guid: 2b2a825d9e06ace41a6e756ad50e4d23, type: 3}
 --- !u!114 &6025439233651862190
 MonoBehaviour:
@@ -104,6 +105,7 @@ MonoBehaviour:
   pickUp: {fileID: 0}
   pickBtn: {fileID: 0}
   unpickBtn: {fileID: 0}
+  mesh: {fileID: 4085571199162381369}
 --- !u!135 &-242164883108105571
 SphereCollider:
   m_ObjectHideFlags: 0

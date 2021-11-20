@@ -31,6 +31,17 @@ namespace Examples
             if (enemyCheck.Length == 0 && ghostCheck.Length == 0 || EnemyController.goHome == true)
             {
                 boarComingSound.Pause();
+                count = 0;
+            }
+            else if(enemyCheck.Length != 0 && EnemyController.goHome == false)
+            {
+                count++;
+                if (count <= 1)
+                {
+                    playMusic = true;
+                    PlayMusic();
+                    print("is playing");
+                }
             }
         }
 
@@ -43,10 +54,12 @@ namespace Examples
                 enemySpawn = false;
             }
 
-            if(EnemyController.goHome == false)
+            /*if (EnemyController.goHome == false)
             {
+                playMusic = true;
                 PlayMusic();
-            }
+                print("Enemy not going home");
+            }*/
         }
 
         void PlayMusic()
@@ -55,7 +68,7 @@ namespace Examples
             {
                 boarComingSound.Play();
                 playMusic = false;
-            } 
+            }   
         }
     }
 }

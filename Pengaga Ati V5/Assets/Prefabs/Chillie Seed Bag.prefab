@@ -277,6 +277,7 @@ MonoBehaviour:
   pickUp: {fileID: 0}
   pickBtn: {fileID: 0}
   unpickBtn: {fileID: 0}
+  mesh: {fileID: 9145892103316604219}
 --- !u!135 &-8211348548676036967
 SphereCollider:
   m_ObjectHideFlags: 0
