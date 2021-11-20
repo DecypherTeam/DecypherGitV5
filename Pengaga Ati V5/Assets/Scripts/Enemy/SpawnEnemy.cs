@@ -20,6 +20,13 @@ namespace Examples
 
         private int count = 0;
 
+        public GameObject warningSign;
+
+        void Start()
+        {
+            warningSign.SetActive(false);
+        }
+
         void Update()
         {
             SpawnEnemies();
@@ -30,6 +37,7 @@ namespace Examples
             ghostCheck = GameObject.FindGameObjectsWithTag("Ghost");
             if (enemyCheck.Length == 0 && ghostCheck.Length == 0 || EnemyController.goHome == true)
             {
+                warningSign.SetActive(false);
                 boarComingSound.Pause();
                 count = 0;
             }
@@ -38,6 +46,7 @@ namespace Examples
                 count++;
                 if (count <= 1)
                 {
+                    warningSign.SetActive(true);
                     playMusic = true;
                     PlayMusic();
                     print("is playing");
@@ -49,6 +58,7 @@ namespace Examples
         {
             if (enemySpawn == true)
             {
+                warningSign.SetActive(true);
                 boarComingSound.Play();
                 Instantiate(enemy, transform.position, transform.rotation);
                 enemySpawn = false;
