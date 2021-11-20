@@ -63,7 +63,7 @@ namespace Examples
                 //PlayerFiring();
                 StartCoroutine(FireDelay());
                 animator.SetBool("isShooting", true);
-                //secondCamera.gameObject.SetActive(true);
+                secondCamera.gameObject.SetActive(true);
                 sumpit.SetActive(true);
                 playerShoot = true;
                 crosshair.SetActive(true);
@@ -150,6 +150,11 @@ namespace Examples
             //cameraTransform.localEulerAngles = new Vector3(9.61f, cameraTransform.localEulerAngles.y, 0f );
             cameraTarget.localEulerAngles = new Vector3(-rotation, cameraTarget.localEulerAngles.y, 0f);
             //cameraTransform.localEulerAngles = new Vector3(-rotation, cameraTransform.localEulerAngles.y, 0f);
+
+            if (playerShoot == true)
+            {
+                cameraTarget.localEulerAngles = new Vector3(0, cameraTarget.localEulerAngles.y, 0f);
+            }
         }
 
         // PlayerFiring
@@ -167,7 +172,7 @@ namespace Examples
             Rigidbody rBody = primitive.AddComponent<Rigidbody>();
             Transform camTransform = secondCamera.transform;
             //Transform camTransform = cameraTransform;
-            rBody.AddForce( camTransform.forward * range, ForceMode.Impulse );
+            rBody.AddForce( transform.forward * range, ForceMode.Impulse );
             Destroy( primitive, 0.5f );
             shootSound.Play();
         }
