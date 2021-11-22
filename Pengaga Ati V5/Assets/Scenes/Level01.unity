@@ -34983,6 +34983,11 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.1830183
       objectReference: {fileID: 0}
+    - target: {fileID: 8508190135774073052, guid: a07b374bd6c5c4041a74daf36f287baf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8508190136939603617, guid: a07b374bd6c5c4041a74daf36f287baf,
         type: 3}
       propertyPath: m_Size.x
@@ -35012,6 +35017,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: -0.20598432
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508190136939603619, guid: a07b374bd6c5c4041a74daf36f287baf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8850206622645738536, guid: a07b374bd6c5c4041a74daf36f287baf,
         type: 3}
