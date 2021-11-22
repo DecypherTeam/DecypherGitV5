@@ -8,7 +8,7 @@ namespace Examples
     {
         Vector3 cameraDirection;
         float camDistance;
-        Vector2 cameraDistanceMinMax = new Vector2(0.5f, 10f);
+        Vector2 cameraDistanceMinMax = new Vector2(0.5f, 6f);
         public Transform cam;
 
         void Start()
