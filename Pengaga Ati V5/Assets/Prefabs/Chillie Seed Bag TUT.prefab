@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 3449579734309687212}
   - component: {fileID: 5901593123467179506}
   - component: {fileID: 6861388052324320147}
+  - component: {fileID: -7507233226219165604}
   m_Layer: 0
   m_Name: Chillie Seed Bag TUT
   m_TagString: Chillie SeedBag
@@ -291,3 +292,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &-7507233226219165604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3449579734309687251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55e74001a54c9a3409ed1ed19d6021bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicator: {fileID: 5169080123300009136, guid: 6e5c1d686a2c8624da2c3918e203a70b,
+    type: 3}
