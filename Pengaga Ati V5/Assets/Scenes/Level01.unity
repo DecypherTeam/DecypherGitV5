@@ -6686,7 +6686,7 @@ GameObject:
   - component: {fileID: 310189930}
   - component: {fileID: 310189929}
   - component: {fileID: 310189928}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ScorePoint
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
