@@ -25,6 +25,7 @@ namespace Examples
             {
                 indicatorUI[0].SetActive(false);
                 nextIndicator = true;
+                print("nextIndicator = true;");
             }
         }
     }

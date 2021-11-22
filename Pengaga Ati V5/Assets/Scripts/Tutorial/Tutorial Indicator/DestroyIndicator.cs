@@ -8,12 +8,17 @@ namespace Examples
     {
         public GameObject indicator;
 
+        void Start()
+        {
+            indicator.SetActive(false);
+        }
+
         void Update()
         {
             if (TutorialIndicator.nextIndicator == true)
             {
                 indicator.SetActive(true);
-                print("it work?");
+                //print("it work?");
             }
         }
 
