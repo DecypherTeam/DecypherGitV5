@@ -2,17 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialIndicator : MonoBehaviour
+namespace Examples
 {
-    // Start is called before the first frame update
-    void Start()
+    public class TutorialIndicator : MonoBehaviour
     {
-        
-    }
+        private GameObject[] indicatorUI;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        void Start()
+        {
+
+        }
+
+        void Update()
+        {
+            indicatorUI = GameObject.FindGameObjectsWithTag("IndicatorUI");
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if(other.gameObject.tag == "Player")
+            {
+                indicatorUI[0].SetActive(false);
+            }
+        }
     }
 }
