@@ -7,7 +7,7 @@ namespace Examples
     public class TutorialIndicator : MonoBehaviour
     {
         private GameObject[] indicatorUI;
-        public static bool nextIndicator = false;
+        public static bool activate = false;
 
         void Start()
         {
@@ -24,8 +24,8 @@ namespace Examples
             if (other.gameObject.tag == "Player")
             {
                 indicatorUI[0].SetActive(false);
-                nextIndicator = true;
-                print("nextIndicator = true;");
+                activate = true;
+                print("activate is true");
             }
         }
     }
