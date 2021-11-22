@@ -6,29 +6,30 @@ namespace Examples
 {
     public class DestroyIndicator : MonoBehaviour
     {
-        public GameObject indicator;
+        //public GameObject indicatorPlant;
 
         void Start()
         {
-            indicator.SetActive(false);
+            this.gameObject.SetActive(false);
+            print("its not visible yet");
         }
 
         void Update()
         {
             if (TutorialIndicator.nextIndicator == true)
             {
-                indicator.SetActive(true);
+                this.gameObject.SetActive(true);
                 //print("it work?");
             }
         }
 
-        private void OnTriggerEnter(Collider other)
+        /*private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.tag == "Player")
             {
                 indicator.SetActive(false);
                 print("set active faalse brother");
             }
-        }
+        }*/
     }
 }
