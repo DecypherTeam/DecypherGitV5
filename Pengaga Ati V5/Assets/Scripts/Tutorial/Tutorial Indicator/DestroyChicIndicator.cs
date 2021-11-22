@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyChicIndicator : MonoBehaviour
+namespace Examples
 {
-    // Start is called before the first frame update
-    void Start()
+    public class DestroyChicIndicator : MonoBehaviour
     {
-        
-    }
+        public static bool deactivateChic = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                deactivateChic = true;
+            }
+        }
     }
 }

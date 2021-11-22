@@ -30,7 +30,6 @@ namespace Examples
             if(DestroyIndicator.deactivate == true)
             {
                 indicator.SetActive(false);
-                indicatorChic.SetActive(false);
             }
 
             enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
@@ -38,6 +37,11 @@ namespace Examples
             if (enemyCheck.Length == 0 && ghostCheck.Length == 0)
             {
                 indicatorChic.SetActive(true);
+            }
+
+            if(DestroyChicIndicator.deactivateChic == true)
+            {
+                indicatorChic.SetActive(false);
             }
         }
     }
