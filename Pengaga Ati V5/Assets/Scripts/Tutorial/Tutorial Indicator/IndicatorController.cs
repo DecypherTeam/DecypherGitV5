@@ -45,11 +45,11 @@ namespace Examples
             // Tutorial indicator for the chicken
             enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
             ghostCheck = GameObject.FindGameObjectsWithTag("Ghost");
-            if (enemyCheck.Length == 0 && ghostCheck.Length == 0)
+            if (enemyCheck.Length == 0 && ghostCheck.Length == 0 && indicatorChic != null)
             {
                 indicatorChic.SetActive(true);
             }
-            if(DestroyChicIndicator.deactivateChic == true)
+            if(DestroyChicIndicator.deactivateChic == true && indicatorChic != null)
             {
                 indicatorChic.SetActive(false);
                 activateAltar = true;
@@ -67,14 +67,25 @@ namespace Examples
             }
 
             // Tutorial indicator for the crop
-            if(activateCrop == true)
+            if(activateCrop == true && indicatorChic == null)
             {
                 indicatorCrop.SetActive(true);
             }
             if(DestroyCropIndicator.deactivateCrop == true)
             {
-                indicatorCrop.SetActive(true);
+                print("Deactivate crop indicator");
+                indicatorCrop.SetActive(false);
                 activateLonghouse = true;
+            }
+
+            // Tutorial indicator for the longhouse
+            if (activateLonghouse == true)
+            {
+                indicatorLonghouse.SetActive(true);
+            }
+            if (DestroyLonghouseIndicator.deactivateLonghouse == true)
+            {
+                indicatorLonghouse.SetActive(false);
             }
         }
     }
