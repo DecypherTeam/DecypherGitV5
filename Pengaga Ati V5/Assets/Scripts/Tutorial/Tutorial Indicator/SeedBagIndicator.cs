@@ -11,7 +11,7 @@ namespace Examples
         // Start is called before the first frame update
         void Start()
         {
-            SpawnUI();
+            StartCoroutine(SpawnUI());
         }
 
         // Update is called once per frame
@@ -20,9 +20,10 @@ namespace Examples
             
         }
 
-        void SpawnUI()
+        IEnumerator SpawnUI()
         {
-            Vector3 pos = new Vector3(0f, 0.1f, 0f);
+            yield return new WaitForSeconds(1);
+            Vector3 pos = new Vector3(0f, 0.5f, 0f);
             Instantiate(indicator, transform.position + pos, transform.rotation);
         }
     }
