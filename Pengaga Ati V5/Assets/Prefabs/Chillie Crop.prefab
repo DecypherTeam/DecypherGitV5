@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3361956409469570445}
   - component: {fileID: 6025439233651862190}
   - component: {fileID: -242164883108105571}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Chillie Crop
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 2125450383559978977}
   - component: {fileID: 7894963911256094156}
   - component: {fileID: 7510487150409265286}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Chillie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
