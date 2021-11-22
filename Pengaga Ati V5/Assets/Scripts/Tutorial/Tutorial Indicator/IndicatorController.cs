@@ -8,15 +8,20 @@ namespace Examples
     {
         public GameObject indicator;
         public GameObject indicatorChic;
+        public GameObject indicatorAltar;
+
 
         public GameObject[] enemyCheck;
         public GameObject[] ghostCheck;
+
+        private bool activateAltar = false;
 
         // Start is called before the first frame update
         void Start()
         {
             indicator.SetActive(false);
             indicatorChic.SetActive(false);
+            indicatorAltar.SetActive(false);
         }
 
         // Update is called once per frame
@@ -42,6 +47,17 @@ namespace Examples
             if(DestroyChicIndicator.deactivateChic == true)
             {
                 indicatorChic.SetActive(false);
+                activateAltar = true;
+            }
+
+            if(activateAltar == true)
+            {
+                indicatorAltar.SetActive(true);
+            }
+
+            if(DestroyAltarIndicator.deactivateAltar == true)
+            {
+                indicatorAltar.SetActive(false);
             }
         }
     }
