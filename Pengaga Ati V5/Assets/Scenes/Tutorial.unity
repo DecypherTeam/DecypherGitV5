@@ -14874,6 +14874,8 @@ MonoBehaviour:
   indicator: {fileID: 244198595183984319}
   indicatorChic: {fileID: 1889764552}
   indicatorAltar: {fileID: 1401625093}
+  indicatorCrop: {fileID: 1735322015}
+  indicatorLonghouse: {fileID: 0}
   enemyCheck: []
   ghostCheck: []
 --- !u!4 &416794665
@@ -14890,6 +14892,7 @@ Transform:
   - {fileID: 244198595183984312}
   - {fileID: 1401625094}
   - {fileID: 1735322016}
+  - {fileID: 831153242}
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19758,6 +19761,128 @@ MonoBehaviour:
   fireBtn: {fileID: 0}
   plantSeedBtn: {fileID: 0}
   click: {fileID: 1049564589}
+--- !u!1 &831153241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 831153242}
+  - component: {fileID: 831153246}
+  - component: {fileID: 831153245}
+  - component: {fileID: 831153244}
+  - component: {fileID: 831153243}
+  m_Layer: 0
+  m_Name: 'Tutorial Longhouse Indicator '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &831153242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831153241}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.1, y: 4.85, z: -40.13}
+  m_LocalScale: {x: 0.5558814, y: 0.5558814, z: 0.5558814}
+  m_Children: []
+  m_Father: {fileID: 416794665}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &831153243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831153241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9efeaea7b87d4df4587f40354b6f9134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &831153244
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831153241}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 8
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &831153245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831153241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1cb7905357a4fc44b8f0ad97e85452f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &831153246
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831153241}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 4871f1a73e2d9914a80e5a4835341ad6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.66, y: 2.84}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &831999073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35729,7 +35854,7 @@ GameObject:
   - component: {fileID: 1735322018}
   - component: {fileID: 1735322017}
   m_Layer: 0
-  m_Name: 'Tutorial Longhouse Indicator '
+  m_Name: 'Tutorial Crop Indicator '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35743,7 +35868,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735322015}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.43, y: 4.24, z: -40.53}
+  m_LocalPosition: {x: 0.36, y: 2.59, z: -0.98}
   m_LocalScale: {x: 0.5558814, y: 0.5558814, z: 0.5558814}
   m_Children: []
   m_Father: {fileID: 416794665}
@@ -35758,7 +35883,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1735322015}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aac312949e41704b88070924f07c0f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9efeaea7b87d4df4587f40354b6f9134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!135 &1735322018
