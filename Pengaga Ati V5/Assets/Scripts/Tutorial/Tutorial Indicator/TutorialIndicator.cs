@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class TutorialIndicator : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private GameObject[] indicatorUI;
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        indicatorUI = GameObject.FindGameObjectsWithTag("IndicatorUI");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            indicatorUI[0].SetActive(false);
+        }
     }
 }

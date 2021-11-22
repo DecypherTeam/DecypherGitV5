@@ -19,6 +19,7 @@ TagManager:
   - Plant Spawn
   - Ghost
   - RightHand
+  - IndicatorUI
   layers:
   - Default
   - TransparentFX
