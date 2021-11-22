@@ -10,6 +10,7 @@ namespace Examples
         public GameObject indicatorChic;
 
         public GameObject[] enemyCheck;
+        public GameObject[] ghostCheck;
 
         // Start is called before the first frame update
         void Start()
@@ -29,12 +30,14 @@ namespace Examples
             if(DestroyIndicator.deactivate == true)
             {
                 indicator.SetActive(false);
+                indicatorChic.SetActive(false);
             }
 
             enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
-            if (enemyCheck.Length == 0)
+            ghostCheck = GameObject.FindGameObjectsWithTag("Ghost");
+            if (enemyCheck.Length == 0 && ghostCheck.Length == 0)
             {
-
+                indicatorChic.SetActive(true);
             }
         }
     }
