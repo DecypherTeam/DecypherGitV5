@@ -26,7 +26,7 @@ namespace Examples
         public GameObject readyUI;
 
         private int Count = 0;
-        private int glowCount = 0;
+        public static int glowCount;
 
         void Start()
         {
@@ -59,10 +59,6 @@ namespace Examples
                 if (glowCount <= 1)
                 {
                     glow = true;
-                }
-                else
-                {
-                    glow = false;
                 }
             }
 
