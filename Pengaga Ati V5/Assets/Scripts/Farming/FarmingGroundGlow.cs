@@ -15,6 +15,11 @@ namespace Examples
                 mesh.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
                 mesh.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.cyan);
             }
+
+            if (other.gameObject.tag == "Plant")
+            {
+                mesh.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.black);
+            }
         }
 
         private void OnTriggerExit(Collider other)
