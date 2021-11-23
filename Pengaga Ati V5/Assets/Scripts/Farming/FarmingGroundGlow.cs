@@ -10,7 +10,7 @@ namespace Examples
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.tag == "Player" && ObjectPickUp.carryingBag == true)
+            if (other.gameObject.tag == "Player" && other.gameObject.tag != "Plant" && ObjectPickUp.carryingBag == true)
             {
                 print("OI");
                 mesh.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
