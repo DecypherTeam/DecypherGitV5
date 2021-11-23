@@ -11751,12 +11751,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 893033114}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &561149126 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4782636949675577126, guid: ea53a0deabeaa154da9e45a5c9eea64e,
-    type: 3}
-  m_PrefabInstance: {fileID: 575488974}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &564233981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18652,25 +18646,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1134540080 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1413689172239245025, guid: ea53a0deabeaa154da9e45a5c9eea64e,
-    type: 3}
-  m_PrefabInstance: {fileID: 575488974}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1134540082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1134540080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e4c830bc2e37d4469a770be0ee3e93c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 561149126}
 --- !u!1 &1137365445
 GameObject:
   m_ObjectHideFlags: 0
