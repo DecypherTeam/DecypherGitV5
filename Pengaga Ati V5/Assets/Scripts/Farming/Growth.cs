@@ -21,6 +21,7 @@ namespace Examples
 
         public static bool plantEaten = false;
         public static bool isHarvested = false;
+        public static bool glow = false;
 
         public GameObject readyUI;
 
@@ -51,6 +52,7 @@ namespace Examples
                 if (Count <= 1)
                 {
                     SpawnUI();
+                    glow = true;
                 }
             }
 

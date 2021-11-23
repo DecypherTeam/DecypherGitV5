@@ -100,7 +100,7 @@ namespace Examples
         private void OnTriggerStay(Collider other)
         {
             togglePickUp(other);
-            if (other.gameObject.tag == "Player" && Player.carryObject == false)
+            if (other.gameObject.tag == "Player" && Player.carryObject == false && Growth.glow == true)
             {
                 //mesh.GetComponent<Renderer>().material.color = Color.red;
                 mesh.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
