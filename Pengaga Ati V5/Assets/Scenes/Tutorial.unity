@@ -16692,6 +16692,11 @@ PrefabInstance:
       propertyPath: crosshair
       value: 
       objectReference: {fileID: 596707710}
+    - target: {fileID: 4782636949686576868, guid: ea53a0deabeaa154da9e45a5c9eea64e,
+        type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 884919503}
     - target: {fileID: 8155009538666339668, guid: ea53a0deabeaa154da9e45a5c9eea64e,
         type: 3}
       propertyPath: GlobalObjectIdHash
