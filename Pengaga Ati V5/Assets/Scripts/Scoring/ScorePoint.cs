@@ -63,7 +63,7 @@ namespace Examples
         void PlayScoreUI()
         {
             Vector3 v = transform.rotation.eulerAngles;
-            transform.rotation = Quaternion.Euler(v.x, 90, v.z);
+            transform.rotation = Quaternion.Euler(v.x, 0, v.z);
             GameObject clone = (GameObject)Instantiate(ScorePlus, transform.position, transform.rotation);
             Destroy(clone, 2.0f);
         }
