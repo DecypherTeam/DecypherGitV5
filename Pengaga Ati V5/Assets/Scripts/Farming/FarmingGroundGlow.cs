@@ -8,17 +8,16 @@ namespace Examples
     {
         public GameObject mesh;
 
-        private void OnTriggerStay(Collider other)
+        void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.tag == "Player" && other.gameObject.tag != "Plant" && ObjectPickUp.carryingBag == true)
+            if (other.gameObject.tag == "Player" && ObjectPickUp.carryingBag == true)
             {
-                print("OI");
                 mesh.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
                 mesh.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.cyan);
             }
         }
 
-        private void OnTriggerExit(Collider other)
+        void OnTriggerExit(Collider other)
         {
             if (other.gameObject.tag == "Player")
             {
