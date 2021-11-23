@@ -26,10 +26,11 @@ namespace Examples
         public GameObject readyUI;
 
         private int Count = 0;
+        private int glowCount = 0;
 
         void Start()
         {
-            crop.GetComponent<ObjectPickUp>().enabled = false;
+            crop.GetComponent<CropObjectPickUp>().enabled = false;
         }
 
         void Update()
@@ -45,14 +46,23 @@ namespace Examples
 
             if (isMaxSize == true)
             {
-                crop.GetComponent<ObjectPickUp>().enabled = true;
+                crop.GetComponent<CropObjectPickUp>().enabled = true;
                 isHarvested = true;
 
                 Count++;
                 if (Count <= 1)
                 {
                     SpawnUI();
+                }
+
+                glowCount++;
+                if (glowCount <= 1)
+                {
                     glow = true;
+                }
+                else
+                {
+                    glow = false;
                 }
             }
 

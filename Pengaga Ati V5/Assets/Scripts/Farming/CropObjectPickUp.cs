@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Examples
 {
-    public class ObjectPickUp : MonoBehaviour
+    public class CropObjectPickUp : MonoBehaviour
     {
         public GameObject player;
         public Transform pickUpDest;
@@ -76,7 +76,7 @@ namespace Examples
                 ActivatePickBtn();
             }
 
-            if(plantScript.seedPlanted == true || ScorePoint.delivered == true)
+            if (plantScript.seedPlanted == true || ScorePoint.delivered == true)
             {
                 anim.SetBool("isPickup", false);
                 ActivatePickBtn();
@@ -128,4 +128,3 @@ namespace Examples
         }
     }
 }
-
