@@ -18,7 +18,7 @@ namespace Examples
         public Transform bulletDest;
         public float range;
 
-        public Camera secondCamera;
+        //public Camera secondCamera;
 
         public GameObject sumpit;
 
@@ -63,7 +63,7 @@ namespace Examples
                 //PlayerFiring();
                 StartCoroutine(FireDelay());
                 animator.SetBool("isShooting", true);
-                secondCamera.gameObject.SetActive(true);
+                //secondCamera.gameObject.SetActive(true);
                 sumpit.SetActive(true);
                 playerShoot = true;
                 crosshair.SetActive(true);
@@ -99,8 +99,6 @@ namespace Examples
         // PlayerMovement
         private void PlayerMovement( float horizontal, float vertical )
         {
-            secondCamera.gameObject.SetActive(false);
-
             bool grounded = controller.isGrounded;
 
             Vector3 moveDirection = myTransform.forward * vertical * 2f;
@@ -170,7 +168,7 @@ namespace Examples
             primitive.transform.position = bulletDest.position;
             primitive.transform.localScale = Vector3.one * .2f;
             Rigidbody rBody = primitive.AddComponent<Rigidbody>();
-            Transform camTransform = secondCamera.transform;
+            //Transform camTransform = secondCamera.transform;
             //Transform camTransform = cameraTransform;
             rBody.AddForce( transform.forward * range, ForceMode.Impulse );
             Destroy( primitive, 0.5f );
