@@ -16,7 +16,7 @@ namespace Examples
                 mesh.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.cyan);
             }
 
-            if (other.gameObject.tag == "Plant")
+            if (other.gameObject.tag == "Plant" || other.gameObject.name == "Chillie Crop(Clone)")
             {
                 mesh.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.black);
             }
