@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9145892102751331782}
   - component: {fileID: 9145892102751331780}
   - component: {fileID: 9145892102751331783}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: polySurface3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9145892102851744622}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Chillie Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 9145892103316604216}
   - component: {fileID: 9145892103316604166}
   - component: {fileID: 9145892103316604217}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: pSphere1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 9145892104289000102}
   - component: {fileID: 60035229846233336}
   - component: {fileID: -8211348548676036967}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Chillie Seed Bag
   m_TagString: Chillie SeedBag
   m_Icon: {fileID: 0}

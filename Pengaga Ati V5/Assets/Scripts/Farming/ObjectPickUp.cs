@@ -52,7 +52,8 @@ namespace Examples
                 if (isPickUp)
                 {
                     Player.carryObject = true;
-                    mesh.GetComponent<Renderer>().material.color = Color.white;
+                    //mesh.GetComponent<Renderer>().material.color = Color.white;
+                    mesh.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.black);
                     anim.SetBool("isPickup", true);
                     transform.position = pickUpDest.position;
                     pickupitem.useGravity = false;
@@ -71,6 +72,7 @@ namespace Examples
                 anim.SetBool("isPickup", false);
                 pickupitem.useGravity = true;
                 pickupitem.transform.parent = null;
+                mesh.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.black);
                 ActivatePickBtn();
             }
 
@@ -100,7 +102,9 @@ namespace Examples
             togglePickUp(other);
             if (other.gameObject.tag == "Player" && Player.carryObject == false)
             {
-                mesh.GetComponent<Renderer>().material.color = Color.red;
+                //mesh.GetComponent<Renderer>().material.color = Color.red;
+                mesh.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
+                mesh.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.magenta);
             }
         }
 
@@ -110,7 +114,8 @@ namespace Examples
             isPickUp = false;
             if (other.gameObject.tag == "Player")
             {
-                mesh.GetComponent<Renderer>().material.color = Color.white;
+                //mesh.GetComponent<Renderer>().material.color = Color.white;
+                mesh.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.black);
             }
         }
 
