@@ -20400,6 +20400,7 @@ MonoBehaviour:
   pickUp: {fileID: 0}
   pickBtn: {fileID: 0}
   unpickBtn: {fileID: 0}
+  mesh: {fileID: 2135155795}
 --- !u!114 &809001565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42049,6 +42050,7 @@ MonoBehaviour:
   pickUp: {fileID: 0}
   pickBtn: {fileID: 0}
   unpickBtn: {fileID: 0}
+  mesh: {fileID: 7750397242423169374}
 --- !u!135 &919132148769782333
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -42201,6 +42203,7 @@ MonoBehaviour:
   pickUp: {fileID: 0}
   pickBtn: {fileID: 0}
   unpickBtn: {fileID: 0}
+  mesh: {fileID: 7750397242721498388}
 --- !u!135 &919132148874108531
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -42420,6 +42423,7 @@ MonoBehaviour:
   pickUp: {fileID: 0}
   pickBtn: {fileID: 0}
   unpickBtn: {fileID: 0}
+  mesh: {fileID: 7750397243077777864}
 --- !u!135 &919132149189046959
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -42558,6 +42562,7 @@ MonoBehaviour:
   pickUp: {fileID: 0}
   pickBtn: {fileID: 0}
   unpickBtn: {fileID: 0}
+  mesh: {fileID: 7750397243157814107}
 --- !u!135 &919132149511761984
 SphereCollider:
   m_ObjectHideFlags: 0
