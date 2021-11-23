@@ -6,9 +6,9 @@ namespace Examples
 {
     public class FarmingGroundGlow : MonoBehaviour
     {
-        public GameObject mesh;
+        [SerializeField] private GameObject mesh;
 
-        void OnTriggerStay(Collider other)
+        private void OnTriggerStay(Collider other)
         {
             if (other.gameObject.tag == "Player" && ObjectPickUp.carryingBag == true)
             {
@@ -17,7 +17,7 @@ namespace Examples
             }
         }
 
-        void OnTriggerExit(Collider other)
+        private void OnTriggerExit(Collider other)
         {
             if (other.gameObject.tag == "Player")
             {
