@@ -109,7 +109,7 @@ namespace Examples
             {
                 //mesh.GetComponent<Renderer>().material.color = Color.red;
                 mesh.GetComponent<SkinnedMeshRenderer>().material.EnableKeyword("_EMISSION");
-                mesh.GetComponent<SkinnedMeshRenderer>().material.SetColor("_EmissionColor", Color.magenta);
+                mesh.GetComponent<SkinnedMeshRenderer>().material.SetColor("_EmissionColor", Color.cyan);
             }
         }
 
