@@ -105,7 +105,6 @@ namespace Examples
                 //mesh.GetComponent<Renderer>().material.color = Color.red;
                 mesh.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
                 mesh.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.cyan);
-                Growth.glowCount = 0;
             }
         }
 

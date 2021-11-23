@@ -26,7 +26,7 @@ namespace Examples
         public GameObject readyUI;
 
         private int Count = 0;
-        public static int glowCount;
+        //public static int glowCount;
 
         void Start()
         {
@@ -42,23 +42,19 @@ namespace Examples
             if (isMaxSize == false && EndPos.handInPosition == true)
             {
                 StartCoroutine(Grow());
+                glow = false;
             }
 
             if (isMaxSize == true)
             {
                 crop.GetComponent<CropObjectPickUp>().enabled = true;
                 isHarvested = true;
+                glow = true;
 
                 Count++;
                 if (Count <= 1)
                 {
                     SpawnUI();
-                }
-
-                glowCount++;
-                if (glowCount <= 1)
-                {
-                    glow = true;
                 }
             }
 
