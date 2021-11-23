@@ -22,6 +22,8 @@ namespace Examples
 
         public GameObject mesh;
 
+        public static bool carryingBag = false;
+
         void Start()
         {
             // Get components inside the script so we won't have to manually place them in inside the inspector [START]
@@ -51,6 +53,7 @@ namespace Examples
             {
                 if (isPickUp)
                 {
+                    carryingBag = true;
                     Player.carryObject = true;
                     //mesh.GetComponent<Renderer>().material.color = Color.white;
                     mesh.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.black);
@@ -67,6 +70,7 @@ namespace Examples
 
             if (TCKInput.GetAction("unpickBtn", EActionEvent.Click))
             {
+                carryingBag = false;
                 Player.carryObject = false;
                 pickupitem.constraints = RigidbodyConstraints.FreezeRotation;
                 anim.SetBool("isPickup", false);

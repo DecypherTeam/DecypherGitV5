@@ -6,11 +6,23 @@ namespace Examples
 {
     public class FarmingGroundGlow : MonoBehaviour
     {
+        public GameObject mesh;
+
         private void OnTriggerStay(Collider other)
+        {
+            if (other.gameObject.tag == "Player" && ObjectPickUp.carryingBag == true)
+            {
+                print("OI");
+                mesh.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
+                mesh.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.cyan);
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
         {
             if (other.gameObject.tag == "Player")
             {
-                print("OI");
+                mesh.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.black);
             }
         }
     }
