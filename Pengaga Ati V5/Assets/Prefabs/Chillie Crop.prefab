@@ -130,9 +130,10 @@ GameObject:
   - component: {fileID: 2125450383559978977}
   - component: {fileID: 7894963911256094156}
   - component: {fileID: 7510487150409265286}
+  - component: {fileID: 4870999818341220401}
   m_Layer: 2
   m_Name: Chillie
-  m_TagString: Untagged
+  m_TagString: ChillieBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,3 +201,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4870999818341220401
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4085571199162381369}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 6, z: 6}
+  m_Center: {x: -0.18122046, y: 0.058008432, z: -0.009191184}
