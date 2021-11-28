@@ -7,11 +7,9 @@ public class LevelManager : MonoBehaviour
     public AudioSource clickNext;
 
     public Animator level1;
-
-    void Start()
-    {
-        level1 = GameObject.Find("Level1").GetComponent<Animator>();
-    }
+    public Animator level2;
+    public GameObject prevBtn;
+    public GameObject nextBtn;
 
     public void LoadNextLevel(string LevelName)
     {
@@ -23,5 +21,28 @@ public class LevelManager : MonoBehaviour
     public void SwitchNextLevel()
     {
         level1.SetBool("Switch", true);
+        level2.SetBool("Switch2", true);
+        StartCoroutine(ShowPrevButton());
+    }
+
+    IEnumerator ShowPrevButton()
+    {
+        yield return new WaitForSeconds(0.5f);
+        prevBtn.SetActive(true);
+        nextBtn.SetActive(false);
+    }
+
+    public void SwitchPrevLevel()
+    {
+        level1.SetBool("Switch", false);
+        level2.SetBool("Switch2", false);
+        StartCoroutine(ShowNextButton());
+    }
+
+    IEnumerator ShowNextButton()
+    {
+        yield return new WaitForSeconds(0.5f);
+        prevBtn.SetActive(false);
+        nextBtn.SetActive(true);
     }
 }
