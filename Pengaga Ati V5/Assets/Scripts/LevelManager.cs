@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-
     public AudioSource clickNext;
 
-    // Use this for initialization
+    public Animator level1;
+
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        level1 = GameObject.Find("Level1").GetComponent<Animator>();
     }
 
     public void LoadNextLevel(string LevelName)
@@ -24,5 +18,10 @@ public class LevelManager : MonoBehaviour
         clickNext.Play();
         Application.LoadLevel(LevelName);
         Time.timeScale = 1;
+    }
+
+    public void SwitchNextLevel()
+    {
+        level1.SetBool("Switch", true);
     }
 }
